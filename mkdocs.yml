@@ -1,0 +1,112 @@
+site_name: Link's GitHub Pages
+site_description: Link's GitHub Pages
+repo_name: linkch0/linkch0.github.io
+repo_url: https://github.com/linkch0/linkch0.github.io
+copyright: Copyright &copy; 2019 - 2023 Link Chen
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+  icon:
+    logo: fontawesome/solid/atom
+    tag:
+      Android: fontawesome/brands/android
+
+plugins:
+  - blog
+  - search
+  - tags
+
+extra:
+  social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:link@connect.hku.hk
+      name: Email
+    - icon: fontawesome/brands/github
+      link: https://github.com/herolink
+      name: GitHub
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/33514662
+      name: Bilibili
+  # generator: false
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
+
+nav:
+  - Home:
+      - index.md
+      - 关于我: home/about.md
+  - Blog:
+      - blog/index.md
+  - Courses:
+      - courses/index.md
+      - Algorithms:
+          - courses/Algorithms/index.md
+      - CSAPP:
+          - courses/CSAPP/index.md
+      - Operating Systems:
+          - courses/OS_JYY/index.md
+  - Projects:
+      - projects/index.md
