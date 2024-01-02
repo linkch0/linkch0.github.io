@@ -1,20 +1,16 @@
 ---
-comments: true
+hide: [toc]
+icon: material/home-outline
 ---
 
 # About me
 
-Hi there :wave:, this is Link Chen.
+Hi there :wave:, this is Link Chen :man_technologist:.
 
 ## GitHub Stats Card
 
-=== "GitHub Stats"
-
-    [![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linkch0)](https://github.com/anuraghazra/github-readme-stats)
-
-=== "Top Langs"
-
-    [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0)](https://github.com/anuraghazra/github-readme-stats)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linkch0&theme=transparent&show_icons=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&theme=transparent&layout=compact&langs_count=8)
 
 ## Education
 

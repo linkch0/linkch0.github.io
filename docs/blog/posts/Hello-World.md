@@ -1,11 +1,9 @@
 ---
-date:
-    created: 2023-12-30
-    updated: 2023-12-31
+date: 2023-12-30
 slug: hello-world
 authors: [linkchen]
-categories: [Misc, Updating]
-tags: [Misc, Updating]
+categories: [Misc]
+tags: [Updating]
 comments: true
 draft: true
 ---
@@ -18,14 +16,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## Metadata
 
-```yaml
-date:
-    created: 2023-12-30
-    updated: 2023-12-31
+```yaml linenums="1"
+date: 2023-12-30
 slug: hello-world
 authors: [linkchen]
-categories: [Misc, Updating]
-tags: [Misc, Updating]
+categories: [Misc]
+tags: [Updating]
 comments: true
 draft: true
 ```

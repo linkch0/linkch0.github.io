@@ -2,6 +2,7 @@ site_name: Link's GitHub Pages
 site_description: Link's GitHub Pages
 repo_name: linkch0/linkch0.github.io
 repo_url: https://github.com/linkch0/linkch0.github.io
+edit_uri: edit/main/docs/
 copyright: Copyright &copy; 2019 - 2023 Link Chen
 
 theme:
@@ -21,6 +22,7 @@ theme:
 
   features:
     - navigation.tabs
+    # - navigation.sections
     - navigation.expand
     - navigation.path
     - navigation.indexes
@@ -30,15 +32,21 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
+    - content.action.view
+    - content.action.edit
   icon:
-    logo: fontawesome/solid/atom
-    tag:
-      Android: fontawesome/brands/android
+    logo: material/atom
 
 plugins:
-  - blog
+  - blog:
+      blog_toc: true
   - search
   - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers:
+      repository: linkch0/linkch0.github.io
+      branch: main
 
 extra:
   social:
@@ -97,16 +105,28 @@ extra_css:
 nav:
   - Home:
       - index.md
-      - 关于我: home/about.md
+      - index.zh.md
+      - Notes:
+          - Utilities:
+              - notes/utilities/Vim.md
+              - notes/utilities/Command-Lines.md
+              - notes/utilities/Softwares.md
+          - Languages:
+              - notes/languages/C.md
+              - notes/languages/Java.md
+              - notes/languages/Python.md
+              - notes/languages/Vocabulary.md
   - Blog:
       - blog/index.md
   - Courses:
       - courses/index.md
       - Algorithms:
-          - courses/Algorithms/index.md
+          - courses/Algorithms/introduction.md
       - CSAPP:
-          - courses/CSAPP/index.md
+          - courses/CSAPP/introduction.md
+          - courses/CSAPP/lecture.md
+          - courses/CSAPP/lab.md
       - Operating Systems:
-          - courses/OS_JYY/index.md
+          - courses/OS_JYY/introduction.md
   - Projects:
       - projects/index.md

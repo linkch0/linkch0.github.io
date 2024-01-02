@@ -1,16 +1,16 @@
+---
+hide: [toc]
+icon: material/face-man
+---
+
 # 关于我
 
-你好呀 :wave:，我是 Link Chen。
+你好呀 :wave:，我是 Link Chen :man_technologist:。
 
-## GitHub 统计卡
+## GitHub 统计
 
-=== "GitHub 统计"
-
-    [![GitHub 统计](https://github-readme-stats.vercel.app/api?username=linkch0)](https://github.com/anuraghazra/github-readme-stats)
-
-=== "常用语言"
-
-    [![常用语言](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0)](https://github.com/anuraghazra/github-readme-stats)
+![统计数据](https://github-readme-stats.vercel.app/api?username=linkch0&locale=cn&theme=transparent&show_icons=true)
+![常用语言](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&locale=cn&theme=transparent&layout=compact&langs_count=8)
 
 ## 教育背景
 

@@ -1,15 +1,10 @@
 ---
-date:
-    created: 2022-04-26
-    updated: 2023-12-31
-slug: vim
-authors: [linkchen]
-categories: [Linux, Updating]
-tags: [Vim, Linux, Updating]
+icon: simple/vim
+tags: [Updating]
 comments: true
 ---
 
-# Vim 笔记
+# Vim
 
 <!-- more -->
 
