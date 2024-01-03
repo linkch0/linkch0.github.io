@@ -2,12 +2,35 @@
 
 ## 01 Overview
 
-```shell
-(gdb) print 50000 * 50000
-$1 = -1794967296
-(gdb) print 1e20 + (-1e20 + 3.14)
-$2 = 0
-```
+1. Overflow.
+
+    ```shell
+    (lldb) print 40000 * 40000
+    (int) 1600000000
+    (lldb) print 50000 * 50000
+    (int) -1794967296
+    ```
+
+    Assuming in a 32-bit system:
+
+    $$
+    \begin{align*}
+      50000 * 50000 &= 2,500,000,000 \\
+      2^{31} - 1 &= 2,147,483,647 \\
+      2,500,000,000 &> 2,147,483,647 \\
+    \end{align*}
+    $$
+
+2. Integer arithmetic is commutative and associative.
+
+    ```shell
+    (lldb) print 400 * 500 * 600
+    (int) 120000000
+    (lldb) print 300 * 400 * 500 * 600
+    (int) 1640261632
+    (lldb) print 400 * 500 * 600 * 300
+    (int) 1640261632
+    ```
 
 ## 02 Bits, Bytes and Integer
 

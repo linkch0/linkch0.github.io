@@ -1,5 +1,5 @@
 ---
-hide: [toc]
+hide: [toc, footer]
 icon: material/face-man
 ---
 
@@ -8,6 +8,8 @@ icon: material/face-man
 你好呀 :wave:，我是 Link Chen :man_technologist:。
 
 ## GitHub 统计
+
+由 [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) 提供
 
 ![统计数据](https://github-readme-stats.vercel.app/api?username=linkch0&locale=cn&theme=transparent&show_icons=true)
 ![常用语言](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&locale=cn&theme=transparent&layout=compact&langs_count=8)
@@ -45,3 +47,10 @@ icon: material/face-man
     -   导师 [陆卫忠](https://eie.usts.edu.cn/info/1120/2956.htm)
 
 </div>
+
+## 页面访问量
+
+由 [ClustrMaps](https://clustrmaps.com/) 提供
+
+<script type='text/javascript' id='clustrmaps'
+    src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=fzKj6VBDwDj4ATO0h693A5cUOCbzT_bP2zN-Ew7YEN4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>

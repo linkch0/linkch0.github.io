@@ -1,5 +1,5 @@
 ---
-hide: [toc]
+hide: [toc, footer]
 icon: material/home-outline
 ---
 
@@ -8,6 +8,8 @@ icon: material/home-outline
 Hi there :wave:, this is Link Chen :man_technologist:.
 
 ## GitHub Stats Card
+
+Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linkch0&theme=transparent&show_icons=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&theme=transparent&layout=compact&langs_count=8)
@@ -45,3 +47,10 @@ Hi there :wave:, this is Link Chen :man_technologist:.
     -   Supervised By [Weizhong Lu](https://eie.usts.edu.cn/info/1120/2956.htm)
 
 </div>
+
+## Pageviews
+
+Provided by [ClustrMaps](https://clustrmaps.com/)
+
+<script type='text/javascript' id='clustrmaps'
+    src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=fzKj6VBDwDj4ATO0h693A5cUOCbzT_bP2zN-Ew7YEN4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>

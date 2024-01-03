@@ -116,6 +116,7 @@ nav:
               - notes/languages/Java.md
               - notes/languages/Python.md
               - notes/languages/Vocabulary.md
+          - notes/Misc.md
   - Blog:
       - blog/index.md
   - Courses:
