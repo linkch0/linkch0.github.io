@@ -1,3 +1,10 @@
+---
+hide: [toc]
+icon: material/information-variant-circle-outline
+tags: [Updating]
+comments: true
+---
+
 # Introduction
 
 1. 程序 = 状态机

@@ -6,7 +6,12 @@ comments: true
 
 # Vim
 
-<!-- more -->
+1. [Link's vimrc](https://github.com/linkch0/vimrc)
+2. [missing-semester](https://missing.csail.mit.edu/2020/editors/)
+3. [missing-semester 中文](https://missing-semester-cn.github.io/2020/editors/)
+4. [VimAwesome](https://vimawesome.com/)
+5. [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+6. [Vim Cheat Sheet](https://vim.rtorr.com/)
 
 ## vimtutor 总结
 
@@ -54,7 +59,7 @@ NOTE: Pressing <ESC> will place you in Normal mode or will cancel
      To undo the undo's, type:                 CTRL-R
 ```
 
-### Lesson3
+### Lesson 3
 
 ```plaintext
   1. To put back text that has just been deleted, type   p .  This puts the
@@ -263,7 +268,8 @@ NOTE: Pressing <ESC> will place you in Normal mode or will cancel
 15. 跳转下一个光标的位置 go to new cursor position in jump list: `<C-i>`，跳转上一个光标的位置 go to older cursor position in jump list: `<C-o>`
 16. 查看 yank 的 register `:reigsters` ，粘贴并覆盖一个单词，在 visual mode 下 `vep`
 
-## References
+## neovim :simple-neovim:
 
-1. [missing-semester](https://missing.csail.mit.edu/2020/editors/)
-2. [missing-semester 中文](https://missing-semester-cn.github.io/2020/editors/)
+1. [neovim GitHub](https://github.com/neovim/neovim)
+
+2. [NvChad Quickstart](https://nvchad.com/docs/quickstart/install)

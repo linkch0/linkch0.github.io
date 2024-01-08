@@ -1,3 +1,9 @@
+---
+icon: fontawesome/solid/laptop-code
+tags: [Updating]
+comments: true
+---
+
 # Lab Notes
 
 ## 1 Data Lab

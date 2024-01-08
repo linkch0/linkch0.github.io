@@ -1,17 +1,56 @@
+---
+icon: fontawesome/solid/chalkboard-user
+tags: [Updating]
+comments: true
+---
+
 # Lecture Notes
 
 ## 01 Overview
 
-1. Overflow.
+1. **Sign-Magnitude:**
+
+   - **Positive Numbers:** The most significant bit (MSB) is the sign bit (0 for positive).
+   - **Negative Numbers:** The sign bit is 1, and the remaining bits represent the magnitude of the negative number.
+
+   Example:
+
+   - `+6` is represented as `0 0110` (sign bit 0, magnitude 6).
+   - `-6` is represented as `1 0110` (sign bit 1, magnitude 6).
+
+2. **One's Complement:**
+
+   - **Positive Numbers:** Same as unsigned binary representation.
+   - **Negative Numbers:** To represent a negative number, invert (flip) all the bits.
+
+   Example:
+
+   - `+6` is represented as `0 0110`.
+   - `-6` is represented as `1 1001` (inverting all bits of `0 0110`).
+
+3. **Two's Complement:**
+
+   - **Positive Numbers:** Same as unsigned binary representation.
+   - **Negative Numbers:** To represent a negative number, invert all bits and add 1.
+
+   Example:
+
+   - `+6` is represented as `0 0110`.
+   - `-6` is represented as `1 1010` (inverting all bits of `0 0110` and adding 1).
+
+1. Integer overflow:
 
     ```shell
     (lldb) print 40000 * 40000
     (int) 1600000000
     (lldb) print 50000 * 50000
     (int) -1794967296
+    01101010111111010000011100000000 (1794967296)
+    bin(int(invert_bits(np.binary_repr(1794967296)[1:]), 2)+1)
+    10010101000000101111100100000000 (50000 * 50000)
     ```
 
-    Assuming in a 32-bit system:
+    In a 32-bit system:
 
     $$
     \begin{align*}
@@ -31,6 +70,21 @@
     (lldb) print 400 * 500 * 600 * 300
     (int) 1640261632
     ```
+
+3. Limitations of floating-point arithmetic:
+
+   ```python
+   >>> (1e20 + -1e20) + 3.14
+   3.14
+   >>> 1e20 + (-1e20 + 3.14)
+   0.0
+   >>> -1e20 + 3.14
+   -1e+20
+   ```
+   
+   - `3.14` compared to `-1e+20` is so insignificant.
+   
+   - [Round-off error in Floats](https://en.wikipedia.org/wiki/Round-off_error)
 
 ## 02 Bits, Bytes and Integer
 

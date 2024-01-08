@@ -1,3 +1,10 @@
+---
+hide: [toc]
+icon: material/information-variant-circle-outline
+tags: [Updating]
+comments: true
+---
+
 # Introduction
 
 Algorithms by [Jeff Erickson](https://jeffe.cs.illinois.edu/)

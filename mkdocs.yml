@@ -35,7 +35,8 @@ theme:
     - content.action.view
     - content.action.edit
   icon:
-    logo: material/atom
+    logo: material/atom-variant
+    repo: fontawesome/brands/github
 
 plugins:
   - blog:
@@ -121,6 +122,9 @@ nav:
       - blog/index.md
   - Courses:
       - courses/index.md
+      - "InternLM":
+          - courses/InternLM/lecture.md
+          - courses/InternLM/assignment.md
       - Algorithms:
           - courses/Algorithms/introduction.md
       - CSAPP:
