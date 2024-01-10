@@ -1,0 +1,26 @@
+name: sync to gitee
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ID_RSA_GITEE }}
+        with:
+          source-repo: git@github.com:linkch0/linkch0.github.io.git
+          destination-repo: git@gitee.com:linkch/linkch.gitee.io.git
+
+      - name: Build Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: linkch
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: linkch/linkch.gitee.io.git
+          branch: gh-pages

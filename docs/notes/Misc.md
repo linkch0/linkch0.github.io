@@ -6,9 +6,6 @@ comments: true
 
 # Misc
 
-1. 配置 [PicGo-Core](https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html)
-2. 注册 [sm.ms](https://smms.app/)
-
 ## Binary, Octal, Hexadecimal Literals
 
 `x = 10` in Decimal

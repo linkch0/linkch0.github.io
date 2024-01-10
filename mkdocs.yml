@@ -32,6 +32,7 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
+    - content.code.annotate
     - content.action.view
     - content.action.edit
   icon:
@@ -44,8 +45,11 @@ plugins:
   - search
   - tags
   - git-revision-date-localized:
+      enabled: !ENV [CI, false]
       enable_creation_date: true
   - git-committers:
+      # CI=true mkdocs serve
+      enabled: !ENV [CI, false]
       repository: linkch0/linkch0.github.io
       branch: main
 
