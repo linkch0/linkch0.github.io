@@ -6,6 +6,10 @@ comments: true
 
 # Softwares
 
+## Typora
+
+1.   Convert a link to markdown format `Command + K`
+
 ## MacOS :simple-apple:
 
 1. Switch between desktops `Control + Left/Right Arrow`

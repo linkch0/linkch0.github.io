@@ -45,10 +45,10 @@ plugins:
   - search
   - tags
   - git-revision-date-localized:
+      # CI: true is default in GitHub Actions
       enabled: !ENV [CI, false]
       enable_creation_date: true
   - git-committers:
-      # CI=true mkdocs serve
       enabled: !ENV [CI, false]
       repository: linkch0/linkch0.github.io
       branch: main
