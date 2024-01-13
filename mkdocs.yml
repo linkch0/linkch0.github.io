@@ -21,6 +21,7 @@ theme:
         name: Switch to light mode
 
   features:
+    - navigation.tracking
     - navigation.tabs
     # - navigation.sections
     - navigation.expand
@@ -52,6 +53,7 @@ plugins:
       enabled: !ENV [CI, false]
       repository: linkch0/linkch0.github.io
       branch: main
+  - glightbox
 
 extra:
   social:
@@ -105,6 +107,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
 
 extra_css:
+  - stylesheets/extra.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 nav:

@@ -5,3 +5,307 @@ comments: true
 ---
 
 #  作业
+
+## L2 轻松玩转书生·浦语大模型趣味 Demo
+
+[笔记地址](./lecture.md/#l2-demo)
+
+### 环境配置
+
+??? note "Config [vimrc](https://github.com/linkch0/vimrc)"
+
+    1. Clone this repo, and install [vim-plug](https://github.com/junegunn/vim-plug):
+    
+        ```shell
+        git clone https://github.com/linkch0/vimrc.git ~/.vimrcs
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        ```
+    
+    2. Edit and paste in `~/.vimrc`:
+    
+        ```
+        set runtimepath+=~/.vimrcs
+        source ~/.vimrcs/plugin.vim
+        source ~/.vimrcs/basic.vim
+        source ~/.vimrcs/map.vim
+        ```
+    
+    3. Install plugins in vim:
+    
+        ```
+        :PlugInstall
+        :source ~/.vimrc
+        ```
+
+??? note "Config zsh"
+
+    1.   Install zsh and tmux:
+    
+         `apt install -y zsh tmux`
+    
+         `chsh -s $(which zsh)`
+    
+    2.   Install [oh-my-zsh](https://ohmyz.sh/):
+    
+         `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+    
+    3.   Install [powerlevel10k](https://github.com/romkatv/powerlevel10k):
+    
+         -   Clone the repository:
+    
+             `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+    
+         -   Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
+    
+         -   Restart terminal to config p10k.
+    
+    4.   Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions):
+    
+         -   Clone this repository into `$ZSH_CUSTOM/plugins` (by default `~/.oh-my-zsh/custom/plugins`):
+    
+             `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+    
+         -   Add the plugin to the list of plugins for Oh My Zsh to load (inside `~/.zshrc`):
+    
+             ```plaintext
+             plugins=( 
+                 # other plugins...
+                 zsh-autosuggestions
+             )
+             ```
+    
+         -   Start a new terminal session.
+    
+    5.   [Optional] Set vi-mode plugin in `~/.zshrc` and restart terminal:
+    
+         ```plaintext
+         plugins=( 
+             # other plugins...
+             vi-mode
+         )
+         ```
+
+### 基础作业
+
+-   [x] InternLM-Chat-7B 模型生成 300 字的小故事
+
+!!! info
+
+    1. 仓库地址：<https://github.com/internlm/InternLM>
+    2. 基于 commit `aaaf4d7b0eef8a44d308806381f38a8bbd6e27de`
+    3. `cli_demo.py` [tutorial 代码地址](https://github.com/InternLM/tutorial/blob/main/helloworld/hello_world.md#24-%E7%BB%88%E7%AB%AF%E8%BF%90%E8%A1%8C)
+
+1.   Command Line Demo
+
+     ```python linenums="1" title="cli_demo.py"
+     import torch
+     from transformers import AutoTokenizer, AutoModelForCausalLM
+     
+     
+     model_name_or_path = "/root/model/Shanghai_AI_Laboratory/internlm-chat-7b"
+     
+     tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
+     model = AutoModelForCausalLM.from_pretrained(model_name_or_path, trust_remote_code=True, torch_dtype=torch.bfloat16, device_map='auto')
+     model = model.eval()
+     
+     system_prompt = """You are an AI assistant whose name is InternLM (书生·浦语).
+     - InternLM (书生·浦语) is a conversational language model that is developed by Shanghai AI Laboratory (上海人工智能实验室). It is designed to be helpful, honest, and harmless.
+     - InternLM (书生·浦语) can understand and communicate fluently in the language chosen by the user such as English and 中文.
+     """
+     
+     messages = [(system_prompt, '')]
+     
+     print("=============Welcome to InternLM chatbot, type 'exit' to exit.=============")
+     
+     while True:
+         input_text = input("User  >>> ")
+         input_text = input_text.replace(' ', '')
+         if input_text == "exit":
+             break
+         response, history = model.chat(tokenizer, input_text, history=messages)
+         messages.append((input_text, response))
+         print(f"robot >>> {response}")
+     ```
+
+     运行效果：
+
+     ![Cli Demo](https://s2.loli.net/2024/01/12/OJUmYrQfcl3PWL8.webp)
+
+2.   Streamlit Web Demo:
+     -   将 `web_demo.py` 中的模型路径修改为本地路径，`git diff`:
+
+         ```diff
+         diff --git a/web_demo.py b/web_demo.py
+         index 26de0ba..7105d63 100644
+         --- a/web_demo.py
+         +++ b/web_demo.py
+         @@ -26,11 +26,11 @@ def on_btn_click():
+          @st.cache_resource
+          def load_model():
+              model = (
+         -        AutoModelForCausalLM.from_pretrained("internlm/internlm-chat-7b", trust_remote_code=True)
+         +        AutoModelForCausalLM.from_pretrained("/root/model/Shanghai_AI_Laboratory/internlm-chat-7b", trust_remote_code=True)
+                  .to(torch.bfloat16)
+                  .cuda()
+              )
+         -    tokenizer = AutoTokenizer.from_pretrained("internlm/internlm-chat-7b", trust_remote_code=True)
+         +    tokenizer = AutoTokenizer.from_pretrained("/root/model/Shanghai_AI_Laboratory/internlm-chat-7b", trust_remote_code=True)
+              return model, tokenizer
+         
+         ```
+
+     -   运行：`streamlit run web_demo.py --server.address 127.0.0.1 --server.port 6006`
+
+     -   端口映射：`ssh -CNg -L 6006:127.0.0.1:6006 intern -F ~/.ssh/ssh_config`
+
+     -   Prompt：`请编写一个300字的小故事，描述你作为一个语言模型是如何被训练的。`
+
+     ![Web Demo](https://s2.loli.net/2024/01/12/7FDepucOmUlWRBi.webp)
+
+-   [x] 熟悉 hugging face 下载功能
+
+使用 `huggingface_hub` python 包，下载 `InternLM-20B` 的 config.json 文件到本地
+
+1.   安装依赖：`pip install -U huggingface_hub`
+
+2.   设置[镜像](https://hf-mirror.com/)：`export HF_ENDPOINT=https://hf-mirror.com`
+
+3.   下载代码：
+
+     ```python
+     import os 
+     from huggingface_hub import hf_hub_download  # Load model directly 
+     
+     hf_hub_download(repo_id="internlm/internlm-20b", filename="config.json")
+     ```
+
+4.   查看 ``config.json` 内容：
+
+     ![config.json](https://s2.loli.net/2024/01/13/1uBinS7K2DHf6Ib.webp)
+
+### 进阶作业
+
+-   [x] 浦语·灵笔的图文理解及创作
+
+!!! info
+
+    1. 代码仓库：<https://github.com/InternLM/InternLM-XComposer>
+    2. 基于 commit `2b14928110b6c37c6be2ebaf1ec7e669c6e85b61`
+
+1.   图文创作：
+
+     -   Command
+
+         ```shell
+         python examples/web_demo.py  \
+             --folder /root/model/Shanghai_AI_Laboratory/internlm-xcomposer-7b \
+             --num_gpus 1 \
+             --port 6006
+         ```
+
+     -   Prompt: `请简要介绍一下香港大学，包含Main Building和Centennial Campus。`
+
+     ![Interleave text image](https://s2.loli.net/2024/01/13/TFHg1d3m5rO24ot.webp)
+
+2.   图片理解：
+
+     ![Multimodal Chat](https://s2.loli.net/2024/01/13/xRYJHUVBKyMSq79.webp)
+     
+-   [x] Lagent 智能体工具调用
+
+!!! info
+
+    1. 代码仓库：<https://github.com/InternLM/lagent>
+    2. 基于 commit `987618c978bd389e2f9e505b4553886f345dc76c`
+    3. `recat_web_demo.py` [tutorial 代码地址](https://github.com/InternLM/tutorial/blob/main/helloworld/hello_world.md#34-%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%A0%81)
+
+
+输入数学问题，`InternLM-Chat-7B` 模型理解题意生成解此题的 `Python` 代码，`Lagent` 调度送入 `Python` 代码解释器求出该问题的解。
+
+:material-bug: **Bug1**
+
+1.   删掉代码里出现的 `GoogleSearch` ，否则会出现 `ValueError: Please set Serper API key either in the environment as SERPER_API_KEY or pass it as api_key parameter.`
+
+2.   Traceback
+
+     ```plaintext
+       File "/root/code/lagent/examples/react_web_demo.py", line 20, in init_state
+         action_list = [PythonInterpreter(), GoogleSearch()]
+     ```
+
+3.   修改代码第7、20、92行，并把模型路径修改为本地路径，`git diff`:
+
+     ```diff title="react_web_demo.py"
+     diff --git a/examples/react_web_demo.py b/examples/react_web_demo.py
+     index da6c649..fff29df 100644
+     --- a/examples/react_web_demo.py
+     +++ b/examples/react_web_demo.py
+     @@ -4,7 +4,7 @@ import os
+      import streamlit as st
+      from streamlit.logger import get_logger
+     
+     -from lagent.actions import ActionExecutor, GoogleSearch, PythonInterpreter
+     +from lagent.actions import ActionExecutor, PythonInterpreter
+      from lagent.agents.react import ReAct
+      from lagent.llms import GPTAPI
+      from lagent.llms.huggingface import HFTransformerCasualLM
+     @@ -17,7 +17,7 @@ class SessionState:
+              st.session_state['assistant'] = []
+              st.session_state['user'] = []
+     
+     -        action_list = [PythonInterpreter(), GoogleSearch()]
+     +        action_list = [PythonInterpreter()]
+              st.session_state['plugin_map'] = {
+                  action.name: action
+                  for action in action_list
+     @@ -89,7 +89,7 @@ class StreamlitUI:
+                          model_type=option)
+                  else:
+                      st.session_state['model_map'][option] = HFTransformerCasualLM(
+     -                    'internlm/internlm-chat-7b-v1_1')
+     +                    '/root/model/Shanghai_AI_Laboratory/internlm-chat-7b')
+              return st.session_state['model_map'][option]
+     
+          def initialize_chatbot(self, model, plugin_action):
+     ```
+
+:material-bug: **Bug2**
+
+1.   确保 streamlit 版本在`1.26.0`以上，[tutorial](https://github.com/InternLM/tutorial/blob/main/helloworld/hello_world.md) 中安装的是`1.24.0`，否则会出现 `TypeError: HeadingMixin.header() got an unexpected keyword argument 'divider'` 的错误
+2.   Traceback
+
+    ```plaintext
+      File "/root/code/lagent/examples/react_web_demo.py", line 50, in init_streamlit
+        st.header(':robot_face: :blue[Lagent] Web Demo ', divider='rainbow')
+    ```
+
+3.   查看版本：`pip list | grep streamlit`
+
+4.   升级：`pip install --upgrade streamlit`
+
+:material-play-circle: **运行**
+
+1.   `streamlit run ./examples/react_web_demo.py --server.address 127.0.0.1 --server.port 6006`
+
+2.   Prompt：`生成一个一元二次方程，并求解。`
+
+3.   方程 $x^2-2x-4=0$，执行结果：$x=1 \pm \sqrt{5}$
+
+     ![Lagent Demo](https://s2.loli.net/2024/01/13/YK6zWwpjdPbuGcs.webp)
+
+## L3 基于 InternLM 和 Langchain 搭建你的知识库
+
+[笔记地址](./lecture.md/#l3-internlm-langchain)
+
+## L4 XTuner 大模型单卡低成本微调实战
+
+[笔记地址](./lecture.md/#l4-xtuner)
+
+## L5 LMDeploy 大模型量化部署实践
+
+[笔记地址](./lecture.md/#l5-lmdeploy)
+
+## L6 OpenCompass 大模型评测解读及实战指南
+
+[笔记地址](./lecture.md/#l6-opencompass)

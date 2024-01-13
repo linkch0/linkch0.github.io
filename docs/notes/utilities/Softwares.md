@@ -8,7 +8,8 @@ comments: true
 
 ## Typora
 
-1.   Convert a link to markdown format `Command + K`
+1.   Convert a link to markdown format `Command + K` or `<link>`
+1.   Insert a link to image format `Control + Command + I`
 
 ## MacOS :simple-apple:
 
