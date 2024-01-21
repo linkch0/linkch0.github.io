@@ -105,6 +105,83 @@ AgentLego: [https://github.com/InternLM/agentlego](https://github.com/InternLM/a
 
 文档地址：<https://github.com/InternLM/tutorial/blob/main/langchain/readme.md>
 
+### 大模型开发范式
+
+LLM 大模型的局限性
+
+-   知识时效性受限：如何让 LLM 能够获取最新的知识
+
+-   专业能力有限：如何打造垂域大模型
+-   定制化成本高：如何打造个人专属的 LLM 应用
+
+1.   RAG (Retrieval Augmented Generation) 检索增强生成
+
+     核心思想：给大模型外挂一个知识库，对于用户的提问，会首先从知识库中匹配到提问，对应回答的相关文档，然后将文档和提问一起交给大模型来生成回答，从而提高大模型的知识储备。
+
+     RAG 流程图：
+
+     ![RAG](https://s2.loli.net/2024/01/21/adAKxqfm4QjoRu6.webp)
+
+     1.   对于每一个用户输入，首先将基于向量模型 Sentence Transformer，将输入文本转化为向量；
+     2.   在 Chroma 向量数据库中匹配相似的文本段，我们认为与问题相似的文本段大概率包含了问题的答案；
+     3.   然后我们会将用户的输入和检索到的相似文本段一起嵌入到模型的 Prompt 中，传递给 InternLM 模型，要求模型对问题作出最终的回答，作为最后的输出。
+
+     RAG 优缺点：
+
+     -   低成本且可实时更新：对于新的知识，只需组织加入到外挂知识库中即可，无需对大模型进行重新训练，不需要 GPU 算力；
+
+     -   能力受基座模型影响：大基座模型的能力上限极大程度决定的 RAG 应用的能力天花板；
+     -   单次回答知识有限：RAG应用每次需要将检索到的相关文档和用户提问一起交给大模型进行回答，占用了大量的模型上下文；
+     -   对于一些需要大跨度收集知识，进行总结性回答的问题表现不佳。
+
+2.   Finetune 微调
+
+     核心思想：在一个新的较小的训练集上，进行轻量级的训练微调，从而提升模型在这个新数据集上的能力。
+
+     Finetune 优缺点：
+
+     -   可个性化微调：Finetune 范式的应用将在个性化数据上微调，充分拟合个性化数据，尤其是对于非可见知识，如回答风格模拟效果非常好；
+     -   知识覆盖面广：Finetune 范式的应用是一个新的个性化大模型，具有大问题的广阔知识域；
+     -   成本高昂：需要在新的数据集上进行训练，需要很多的GPU算力和个性化数据；
+     -   无法实时更新：更新成本高。
+
+### LangChain 简介
+
+LangChain 框架 (<https://github.com/langchain-ai/langchain>) 是一个开源工具，能够为各种 LLM 提供通用接口来简化应用程序的开发流程，帮助开发者自由构建大模型应用。LangChain 的组件包括：
+
+-   提示 (Prompts) : 使模型执行操作的方式；
+-   模型 (Models) ：大语言模型、对话模型，文本表示模型。目前包含多个模型的集成；
+-   索引 (Indexes) : 获取数据的方式，可以与模型结合使用；
+-   链 (Chains) : 端到端功能实现。Eg. 检索问答链，覆盖实现 RAG 的全部流程；
+-   代理 (Agents) : 使用模型作为推理引擎。
+
+基于 LangChain 搭建 RAG 应用：
+
+![LangChain & RAG](https://s2.loli.net/2024/01/21/7P1UgaC5rDxnTG2.webp)
+
+1.   首先对于以本地文档形式存在的个人知识库，会使用 Unstructed Loader 组件来加载本地文档，这个组件会将不同格式的本地文档统一转换为纯文本格式；
+2.   然后通过 Text Splitter 组件，对提取出来的纯文本进行分割成 Chunks；
+3.   再通过开源词向量模型 Sentence Transformer 来将文本段转化为向量格式，存储到基于 Chroma 的向量数据库中；
+4.   接下来对于用户的每一个输入 Query，会首先通过 Sentence Transformer，将输入转化为同样维度的向量；
+5.   通过在向量数据库中进行相似度的匹配，找到和用户输入相关的文本段；
+6.   将相关的文本段嵌入到已经写好的 Prompt Template 中，再交给 InternLM 进行最后的回答即可。
+
+上述这一整个过程都会被封装在检索问答链中，我们可以直接将个性化的配置引入到检索问答里的对象，即可构建属于自己的 RAG 应用。
+
+### 构建向量数据库
+
+![构建向量数据库](https://s2.loli.net/2024/01/21/9wQ5aqpzBrdAP7I.webp)
+
+### 搭建知识库助手
+
+构建检索问答链：
+
+![构建检索问答链](https://s2.loli.net/2024/01/21/WayFLsSGVIK1lm5.webp)
+
+RAG 方案优化建议：
+
+![RAG 方案优化建议](https://s2.loli.net/2024/01/21/B7zIMNJ4svlnxf2.webp)
+
 ## L4 XTuner 大模型单卡低成本微调实战
 
 文档地址：<https://github.com/InternLM/tutorial/blob/main/xtuner/README.md>

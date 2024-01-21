@@ -119,6 +119,8 @@ nav:
               - notes/utilities/Vim.md
               - notes/utilities/Command-Lines.md
               - notes/utilities/Softwares.md
+          - Techniques:
+              - notes/techniques/BigData.md
           - Languages:
               - notes/languages/C.md
               - notes/languages/Java.md

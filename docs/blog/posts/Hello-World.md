@@ -76,45 +76,75 @@ Installation:
 
     ```bash linenums="1" title="upload.sh"
     #!/bin/bash
+    source ~/.bash_profile
     
-    # Check if the correct number of arguments is provided
-    if [ "$#" -ne 1 ]; then
-        echo "Usage: $0 <image_path>"
+    # Function to check if multiple commands exist
+    commands_exist() {
+      for cmd in "$@"; do
+        if ! command -v "$cmd" >/dev/null 2>&1; then
+          return 1  # Return non-zero if any command is not found
+        fi
+      done
+      return 0  # Return zero if all commands are found
+    }
+    
+    # Check if all command exists
+    if ! commands_exist "cwebp" "magick" "md5sum" "picgo"; then
+        echo "Error: Some commands are missing. Please install the required tools."
         exit 1
     fi
     
-    # Check if the file exists
-    if [ ! -f "$1" ]; then
-        echo "Error: File not found: $1"
-        exit 1
-    fi
+    upload_single(){
+        # Check if the file exists
+        if [ ! -f "$1" ]; then
+            echo "Error: File not found: $1"
+            exit 1
+        fi
     
-    # Get directory and name without extension
-    im_dir=$(dirname "$1")
-    im_name=$(basename "$1")
-    im_name=${im_name%.*}
+        # Get directory and name without extension
+        im_dir=$(dirname "$1")
+        im_name=$(basename "$1")
+        im_name=${im_name%.*}
     
-    # Convert the image to WebP using cwebp
-    webp_path="$im_dir/${im_name}.webp"
-    mark_path="$im_dir/${im_name}_mark.webp"
-    /opt/homebrew/bin/cwebp -q 80 "$1" -o "$webp_path"
+        # Convert the image to WebP using cwebp
+        webp_path="$im_dir/${im_name}.webp"
+        mark_path="$im_dir/${im_name}_mark.webp"
+        cwebp -q 80 "$1" -o "$webp_path"
     
-    # Add your own watermark to WebP
-    watermark='© linkch0.github.io'
-    /opt/homebrew/bin/magick "$webp_path" -pointsize 30 -fill white\
-        -gravity SouthEast -annotate +10+10 "$watermark" "$mark_path"
+        # Add your own watermark to WebP
+        watermark='© linkch0.github.io'
+        magick "$webp_path" -pointsize 30 -fill white \
+            -gravity SouthEast \
+            -annotate +10+10 "$watermark" \
+            "$mark_path"
     
-    # Calculate the hash of WebP file
-    hash_value=$(/opt/homebrew/bin/md5sum "$mark_path" | awk '{print $1}') # (1)!
-    hash_path="$im_dir/${hash_value}.webp"
-    mv "$mark_path" "$hash_path"
+        # Calculate the hash of WebP file
+        hash_value=$(md5sum "$mark_path" | awk '{print $1}')
+        hash_path="$im_dir/${hash_value}.webp"
+        mv "$mark_path" "$hash_path"
     
-    # Upload the WebP file using picgo
-    /opt/homebrew/bin/picgo upload "$hash_path"
-    rm "$webp_path" "$hash_path"
-    # echo "Conversion and upload successful!"
+        # Upload the WebP file using picgo
+        upload_output=$(picgo upload "$hash_path" 2>&1)
+        # picgo upload "$hash_path"
+        if ! [ $? -eq 0 ]; then
+            echo "Error: Picgo upload failed."
+            echo $upload_output
+            exit 1
+        fi
+        rm "$webp_path"
+        mv "$hash_path" /Users/link/Pictures/Other/Picgo-Backup
+        # echo "Conversion and upload successful!"
+    }
+    
+    # Display the number of arguments
+    # echo "Number of arguments: $#"
+    args=("$@")
+    # Upload all arguments using the array
+    for arg in "${args[@]}"; do
+        upload_single "$arg"
+    done
     ```
-    
+
     1.  Print the fifth column (a.k.a. field) in a space-separated file:
         - `awk '{print $5}' path/to/file`
 
