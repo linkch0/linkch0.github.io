@@ -9,6 +9,9 @@ comments: true
 ## Linux :simple-linux:
 
 1. 获取当前`bash pid`：`ps -p $$`，获取`fish-shell pid`: `ps -p $fish_pid`
+2. Commands for Manipulating The History
+    -   <https://www.gnu.org/software/bash/manual/html_node/Commands-For-History.html>
+    -   reverse-search-history (C-r)
 
 ## GDB :simple-gnu:
 
@@ -155,6 +158,36 @@ GNU is a recursive acronym for "GNU's Not Unix!".
 4. iTerm2 shell integration `source ~/.iterm2_shell_integration.fish`
 
 ## Homebrew :simple-homebrew:
+
+换阿里云源：<https://developer.aliyun.com/mirror/homebrew>，从阿里云下载安装脚本并安装 Homebrew 
+
+```shell
+git clone https://mirrors.aliyun.com/homebrew/install.git brew-install
+/bin/bash brew-install/install.sh
+rm -rf brew-install
+```
+
+-   bash
+
+    ```shell
+    echo 'export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"' >> ~/.bash_profile
+    echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' >> ~/.bash_profile
+    echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' >> ~/.bash_profile
+    echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"' >> ~/.bash_profile
+    source ~/.bash_profile
+    brew update
+    ```
+
+-   zsh
+
+    ```shell
+    echo 'export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"' >> ~/.zshrc
+    echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' >> ~/.zshrc
+    echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' >> ~/.zshrc
+    echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"' >> ~/.zshrc
+    source ~/.zshrc
+    brew update
+    ```
 
 1. Search openjdk `brew search openjdk`
 2. Install openjdk `brew install openjdk`

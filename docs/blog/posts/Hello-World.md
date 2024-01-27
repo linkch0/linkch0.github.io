@@ -119,16 +119,16 @@ Installation:
             "$mark_path"
     
         # Calculate the hash of WebP file
-        hash_value=$(md5sum "$mark_path" | awk '{print $1}')
+        hash_value=$(md5sum "$mark_path" | awk '{print $1}') # (1)!
         hash_path="$im_dir/${hash_value}.webp"
         mv "$mark_path" "$hash_path"
     
         # Upload the WebP file using picgo
-        upload_output=$(picgo upload "$hash_path" 2>&1)
-        # picgo upload "$hash_path"
+        picgo upload "$hash_path"
+        # upload_output=$(picgo upload "$hash_path" 2>&1)
         if ! [ $? -eq 0 ]; then
             echo "Error: Picgo upload failed."
-            echo $upload_output
+            # echo $upload_output
             exit 1
         fi
         rm "$webp_path"

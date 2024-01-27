@@ -592,6 +592,344 @@ demo.launch()
 
 [笔记地址](./lecture.md/#l4-xtuner)
 
+参考答案：<https://github.com/InternLM/tutorial/blob/main/xtuner/self.md>
+
+### 生成数据集
+
+```python title="generate_data.py" linenums="1"
+import json
+
+# 输入你的名字
+name = 'Link Chen'
+# 重复次数
+n = 10000
+
+data = [
+    {
+        "conversation": [
+            {
+                "input": "请做一下自我介绍",
+                "output": "我是{}的小助手，内在是上海AI实验室书生·浦语的7B大模型哦".format(name)
+            }
+        ]
+    }
+]
+
+for i in range(n):
+    data.append(data[0])
+
+with open('personal_assistant.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=4)
+```
+
+### 修改配置文件
+
+```shell
+mkdir /root/personal_assistant/config && cd /root/personal_assistant/config
+xtuner copy-cfg internlm_chat_7b_qlora_oasst1_e3 .
+```
+
+修改高亮的行
+
+```python title="internlm_chat_7b_qlora_oasst1_e3_copy.py" linenums="1" hl_lines="25 28 30 34 37 50 53 94-95 98-99"
+# Copyright (c) OpenMMLab. All rights reserved.
+import torch
+from datasets import load_dataset
+from mmengine.dataset import DefaultSampler
+from mmengine.hooks import (CheckpointHook, DistSamplerSeedHook, IterTimerHook,
+                            LoggerHook, ParamSchedulerHook)
+from mmengine.optim import AmpOptimWrapper, CosineAnnealingLR, LinearLR
+from peft import LoraConfig
+from torch.optim import AdamW
+from transformers import (AutoModelForCausalLM, AutoTokenizer,
+                          BitsAndBytesConfig)
+
+from xtuner.dataset import process_hf_dataset
+from xtuner.dataset.collate_fns import default_collate_fn
+from xtuner.dataset.map_fns import oasst1_map_fn, template_map_fn_factory
+from xtuner.engine.hooks import DatasetInfoHook, EvaluateChatHook
+from xtuner.engine.runner import TrainLoop
+from xtuner.model import SupervisedFinetune
+from xtuner.utils import PROMPT_TEMPLATE
+
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+# Model
+pretrained_model_name_or_path = '/root/data/model/Shanghai_AI_Laboratory/internlm-chat-7b'
+
+# Data
+data_path = '/root/personal_assistant/data/personal_assistant.json'
+prompt_template = PROMPT_TEMPLATE.internlm_chat
+max_length = 512
+pack_to_max_length = True
+
+# Scheduler & Optimizer
+batch_size = 2  # per_device
+accumulative_counts = 16
+dataloader_num_workers = 0
+max_epochs = 3
+optim_type = AdamW
+lr = 2e-4
+betas = (0.9, 0.999)
+weight_decay = 0
+max_norm = 1  # grad clip
+warmup_ratio = 0.03
+
+# Save
+save_steps = 500
+save_total_limit = 2  # Maximum checkpoints to keep (-1 means unlimited)
+
+# Evaluate the generation performance during the training
+evaluation_freq = 90
+SYSTEM = ''
+evaluation_inputs = [
+    '请介绍一下你自己', '请做一下自我介绍'
+]
+
+#######################################################################
+#                      PART 2  Model & Tokenizer                      #
+#######################################################################
+tokenizer = dict(
+    type=AutoTokenizer.from_pretrained,
+    pretrained_model_name_or_path=pretrained_model_name_or_path,
+    trust_remote_code=True,
+    padding_side='right')
+
+model = dict(
+    type=SupervisedFinetune,
+    llm=dict(
+        type=AutoModelForCausalLM.from_pretrained,
+        pretrained_model_name_or_path=pretrained_model_name_or_path,
+        trust_remote_code=True,
+        torch_dtype=torch.float16,
+        quantization_config=dict(
+            type=BitsAndBytesConfig,
+            load_in_4bit=True,
+            load_in_8bit=False,
+            llm_int8_threshold=6.0,
+            llm_int8_has_fp16_weight=False,
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type='nf4')),
+    lora=dict(
+        type=LoraConfig,
+        r=64,
+        lora_alpha=16,
+        lora_dropout=0.1,
+        bias='none',
+        task_type='CAUSAL_LM'))
+
+#######################################################################
+#                      PART 3  Dataset & Dataloader                   #
+#######################################################################
+train_dataset = dict(
+    type=process_hf_dataset,
+    #  dataset=dict(type=load_dataset, path=data_path),
+    dataset=dict(type=load_dataset, path='json', data_files=dict(train=data_path)),
+    tokenizer=tokenizer,
+    max_length=max_length,
+    #  dataset_map_fn=oasst1_map_fn,
+    dataset_map_fn=None,
+    template_map_fn=dict(
+        type=template_map_fn_factory, template=prompt_template),
+    remove_unused_columns=True,
+    shuffle_before_pack=True,
+    pack_to_max_length=pack_to_max_length)
+
+train_dataloader = dict(
+    batch_size=batch_size,
+    num_workers=dataloader_num_workers,
+    dataset=train_dataset,
+    sampler=dict(type=DefaultSampler, shuffle=True),
+    collate_fn=dict(type=default_collate_fn))
+
+#######################################################################
+#                    PART 4  Scheduler & Optimizer                    #
+#######################################################################
+# optimizer
+optim_wrapper = dict(
+    type=AmpOptimWrapper,
+    optimizer=dict(
+        type=optim_type, lr=lr, betas=betas, weight_decay=weight_decay),
+    clip_grad=dict(max_norm=max_norm, error_if_nonfinite=False),
+    accumulative_counts=accumulative_counts,
+    loss_scale='dynamic',
+    dtype='float16')
+
+# learning policy
+# More information: https://github.com/open-mmlab/mmengine/blob/main/docs/en/tutorials/param_scheduler.md  # noqa: E501
+param_scheduler = [
+    dict(
+        type=LinearLR,
+        start_factor=1e-5,
+        by_epoch=True,
+        begin=0,
+        end=warmup_ratio * max_epochs,
+        convert_to_iter_based=True),
+    dict(
+        type=CosineAnnealingLR,
+        eta_min=0.0,
+        by_epoch=True,
+        begin=warmup_ratio * max_epochs,
+        T_max=max_epochs,
+        convert_to_iter_based=True)
+]
+
+# train, val, test setting
+train_cfg = dict(type=TrainLoop, max_epochs=max_epochs)
+
+#######################################################################
+#                           PART 5  Runtime                           #
+#######################################################################
+# Log the dialogue periodically during the training process, optional
+custom_hooks = [
+    dict(type=DatasetInfoHook, tokenizer=tokenizer),
+    dict(
+        type=EvaluateChatHook,
+        tokenizer=tokenizer,
+        every_n_iters=evaluation_freq,
+        evaluation_inputs=evaluation_inputs,
+        system=SYSTEM,
+        prompt_template=prompt_template)
+]
+
+# configure default hooks
+default_hooks = dict(
+    # record the time of every iteration.
+    timer=dict(type=IterTimerHook),
+    # print log every 10 iterations.
+    logger=dict(type=LoggerHook, log_metric_by_epoch=False, interval=10),
+    # enable the parameter scheduler.
+    param_scheduler=dict(type=ParamSchedulerHook),
+    # save checkpoint per `save_steps`.
+    checkpoint=dict(
+        type=CheckpointHook,
+        by_epoch=False,
+        interval=save_steps,
+        max_keep_ckpts=save_total_limit),
+    # set sampler seed in distributed evrionment.
+    sampler_seed=dict(type=DistSamplerSeedHook),
+)
+
+# configure environment
+env_cfg = dict(
+    # whether to enable cudnn benchmark
+    cudnn_benchmark=False,
+    # set multi process parameters
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0),
+    # set distributed parameters
+    dist_cfg=dict(backend='nccl'),
+)
+
+# set visualizer
+visualizer = None
+
+# set log level
+log_level = 'INFO'
+
+# load from which checkpoint
+load_from = None
+
+# whether to resume training from the loaded checkpoint
+resume = False
+
+# Defaults to use random seed and disable `deterministic`
+randomness = dict(seed=None, deterministic=False)
+
+# set log processor
+log_processor = dict(by_epoch=False)
+```
+
+### 训练并保存模型参数
+
+-   Before training
+
+    ![Before training](https://s2.loli.net/2024/01/27/M25iqdvNPmZgyxf.webp)
+
+-   After training
+
+    ![After training](https://s2.loli.net/2024/01/27/M6xnXFh8Ws1wYcv.webp)
+
+-   训练完成
+
+    ![训练完成](https://s2.loli.net/2024/01/27/AtBFhX3DSsz64Qa.webp)
+
+微调后参数转换/合并：
+
+1.   训练后的 pth 格式参数转 Hugging Face 格式
+
+     ```shell
+     # 创建用于存放Hugging Face格式参数的hf文件夹
+     mkdir /root/personal_assistant/config/work_dirs/hf
+     
+     export MKL_SERVICE_FORCE_INTEL=1
+     
+     # 配置文件存放的位置
+     export CONFIG_NAME_OR_PATH=/root/personal_assistant/config/internlm_chat_7b_qlora_oasst1_e3_copy.py
+     
+     # 模型训练后得到的pth格式参数存放的位置
+     export PTH=/root/personal_assistant/config/work_dirs/internlm_chat_7b_qlora_oasst1_e3_copy/iter_1152.pth
+     
+     # pth文件转换为Hugging Face格式后参数存放的位置
+     export SAVE_PATH=/root/personal_assistant/config/work_dirs/hf
+     
+     # 执行参数转换
+     xtuner convert pth_to_hf $CONFIG_NAME_OR_PATH $PTH $SAVE_PATH
+     ```
+
+     ![转化 pth 为 HF 格式](https://s2.loli.net/2024/01/27/EXyRiSmcQGVlrxI.webp)
+
+     ```shell
+     ❯ ls /root/personal_assistant/config/work_dirs/hf
+     README.md  adapter_config.json  adapter_model.bin  xtuner_config.py
+     ```
+
+2.   Merge 模型参数
+
+     ```shell
+     export MKL_SERVICE_FORCE_INTEL=1
+     export MKL_THREADING_LAYER='GNU'
+     
+     # 原始模型参数存放的位置
+     export NAME_OR_PATH_TO_LLM=/root/data/model/Shanghai_AI_Laboratory/internlm-chat-7b
+     
+     # Hugging Face格式参数存放的位置
+     export NAME_OR_PATH_TO_ADAPTER=/root/personal_assistant/config/work_dirs/hf
+     
+     # 最终Merge后的参数存放的位置
+     mkdir /root/personal_assistant/config/work_dirs/hf_merge
+     export SAVE_PATH=/root/personal_assistant/config/work_dirs/hf_merge
+     
+     # 执行参数Merge
+     xtuner convert merge \
+         $NAME_OR_PATH_TO_LLM \
+         $NAME_OR_PATH_TO_ADAPTER \
+         $SAVE_PATH \
+         --max-shard-size 2GB
+     ```
+
+     ![Merge 参数](https://s2.loli.net/2024/01/27/P3KQpOWCtGlEs8n.webp)
+
+     ```shell
+     ❯ ls /root/personal_assistant/config/work_dirs/hf_merge
+     config.json                       pytorch_model-00002-of-00008.bin  pytorch_model-00007-of-00008.bin  tokenizer.model
+     configuration_internlm.py         pytorch_model-00003-of-00008.bin  pytorch_model-00008-of-00008.bin  tokenizer_config.json
+     generation_config.json            pytorch_model-00004-of-00008.bin  pytorch_model.bin.index.json
+     modeling_internlm.py              pytorch_model-00005-of-00008.bin  special_tokens_map.json
+     pytorch_model-00001-of-00008.bin  pytorch_model-00006-of-00008.bin  tokenization_internlm.py
+     ```
+
+### Gradio Web Demo
+
+-   Before training
+
+    ![Before training Web](https://s2.loli.net/2024/01/27/DQ7xUpnk8GFtzWc.webp)
+
+-   After training
+
+    ![After training Web](https://s2.loli.net/2024/01/27/oD3icXJNwfR4zMS.webp)
+
 ## L5 LMDeploy 大模型量化部署实践
 
 [笔记地址](./lecture.md/#l5-lmdeploy)

@@ -8,10 +8,10 @@ comments: true
 
 书生·浦语大模型实战营
 
-1.   [网课地址](https://www.bilibili.com/video/BV1Rc411b7ns)
-2.   [学习手册](https://jpf9plilub.feishu.cn/docx/CjEpd96yhoT4owx6GE7cDvZLnWg)
-3.   [Q&A文档](https://cguue83gpz.feishu.cn/docx/Noi7d5lllo6DMGxkuXwclxXMn5f)
-4.   GPTs: [https://www.glbai.com/](https://www.glbai.com/)
+1.   网课地址：<https://www.bilibili.com/video/BV1Rc411b7ns>
+2.   学习手册：<https://jpf9plilub.feishu.cn/docx/CjEpd96yhoT4owx6GE7cDvZLnWg>
+3.   Q&A 文档：<https://cguue83gpz.feishu.cn/docx/Noi7d5lllo6DMGxkuXwclxXMn5f>
+4.   GPTs: <https://www.glbai.com/>
 
 ## L1 书生·浦语大模型全链路开源开放体系
 
@@ -29,7 +29,7 @@ comments: true
 
 ### 数据
 
-开源书生万卷数据集，和 OpenDataLab 平台，[https://opendatalab.com/](https://opendatalab.com/)
+开源书生万卷数据集，和 OpenDataLab 平台，<https://opendatalab.com/>
 
 ![书生万卷](https://s2.loli.net/2024/01/11/XAaBER9o7vwePNk.webp)
 
@@ -39,7 +39,7 @@ comments: true
 
 ![评测数据集](https://s2.loli.net/2024/01/11/zfJhItYnDgik9QF.webp)
 
-OpenCompass 开源评测平台，[https://opencompass.org.cn/](https://opencompass.org.cn/)
+OpenCompass 开源评测平台，<https://opencompass.org.cn/>
 
 ![OpenCompass平台](https://s2.loli.net/2024/01/11/G7d2IgLmNlPo8ZD.webp)
 
@@ -49,27 +49,27 @@ OpenCompass 开源评测平台，[https://opencompass.org.cn/](https://opencompa
 
 ![部署](https://s2.loli.net/2024/01/11/jyOrhfdxkqE8Nv9.webp)
 
-LMDeploy: [https://github.com/InternLM/lmdeploy](https://github.com/InternLM/lmdeploy)
+LMDeploy: <https://github.com/InternLM/lmdeploy>
 
 ![LMDeploy](https://s2.loli.net/2024/01/11/LY8adGnZO4Bvhji.webp)
 
 ### 应用
 
-从LLM到智能体，Lagent: [https://github.com/InternLM/lagent](https://github.com/InternLM/lagent)
+从LLM到智能体，Lagent: <https://github.com/InternLM/lagent>
 
 ![智能体](https://s2.loli.net/2024/01/11/z8xvO6owILcsfUl.webp)
 
-AgentLego: [https://github.com/InternLM/agentlego](https://github.com/InternLM/agentlego)
+AgentLego: <https://github.com/InternLM/agentlego>
 
 ![AgentLego](https://s2.loli.net/2024/01/11/KMzRoe1mAJny584.webp)
 
 ## L2 轻松玩转书生·浦语大模型趣味 Demo
 
-文档地址：[https://github.com/InternLM/tutorial/blob/main/helloworld/hello_world.md](https://github.com/InternLM/tutorial/blob/main/helloworld/hello_world.md)
+文档地址：<https://github.com/InternLM/tutorial/blob/main/helloworld/hello_world.md>
 
 ### InternLM-Chat-7B 智能对话 Demo
 
-`InternLM`：[https://github.com/InternLM/InternLM](https://github.com/InternLM/InternLM) 是一个开源的轻量级训练框架，旨在支持大模型训练而无需大量的依赖。基于 `InternLM` 训练框架，上海人工智能实验室已经发布了两个开源的预训练模型：`InternLM-7B` 和 `InternLM-20B`。
+`InternLM`：<https://github.com/InternLM/InternLM> 是一个开源的轻量级训练框架，旨在支持大模型训练而无需大量的依赖。基于 `InternLM` 训练框架，上海人工智能实验室已经发布了两个开源的预训练模型：`InternLM-7B` 和 `InternLM-20B`。
 
 1.   Command Line Demo:
 
@@ -81,7 +81,7 @@ AgentLego: [https://github.com/InternLM/agentlego](https://github.com/InternLM/a
 
 ### Lagent 智能体工具调用 Demo
 
-`Lagent`：[https://github.com/InternLM/lagent](https://github.com/InternLM/lagent) 是一个轻量级、开源的基于大语言模型的智能体（agent）框架，支持用户快速地将一个大语言模型转变为多种类型的智能体，并提供了一些典型工具为大语言模型赋能。架构如图所示：
+`Lagent`：<https://github.com/InternLM/lagent> 是一个轻量级、开源的基于大语言模型的智能体（agent）框架，支持用户快速地将一个大语言模型转变为多种类型的智能体，并提供了一些典型工具为大语言模型赋能。架构如图所示：
 
 ![Lagent](https://github.com/InternLM/tutorial/raw/main/helloworld/images/Lagent.png)
 
@@ -91,7 +91,7 @@ AgentLego: [https://github.com/InternLM/agentlego](https://github.com/InternLM/a
 
 ### 浦语·灵笔图文理解创作 Demo
 
-浦语·灵笔：[https://github.com/InternLM/InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer)，是基于书生·浦语大语言模型研发的视觉-语言大模型，提供出色的图文理解和创作能力，结合了视觉和语言的先进技术，能够实现图像到文本、文本到图像的双向转换。使用浦语·灵笔大模型可以轻松的创作一篇图文推文，也能够轻松识别一张图片中的物体，并生成对应的文本描述。
+浦语·灵笔：<https://github.com/InternLM/InternLM-XComposer>，是基于书生·浦语大语言模型研发的视觉-语言大模型，提供出色的图文理解和创作能力，结合了视觉和语言的先进技术，能够实现图像到文本、文本到图像的双向转换。使用浦语·灵笔大模型可以轻松的创作一篇图文推文，也能够轻松识别一张图片中的物体，并生成对应的文本描述。
 
 1.   图文创作：
 
@@ -185,6 +185,42 @@ RAG 方案优化建议：
 ## L4 XTuner 大模型单卡低成本微调实战
 
 文档地址：<https://github.com/InternLM/tutorial/blob/main/xtuner/README.md>
+
+Fine-tune 简介
+
+![Fine-tune](https://s2.loli.net/2024/01/27/zHpAcQgj9BWym1k.webp)
+
+### 指令跟随微调
+
+![指令微调1](https://s2.loli.net/2024/01/27/qodwWtXb7KJDFeO.webp)
+
+![System User Assistant](https://s2.loli.net/2024/01/27/LRe5hMJHSldGYg7.webp)
+
+![对话模板](https://s2.loli.net/2024/01/27/fPygQW1HXD8ZvRK.webp)
+
+![Loss](https://s2.loli.net/2024/01/27/x513MK8BXtekh4z.webp)
+
+### 增量预训练微调
+
+![ ](https://s2.loli.net/2024/01/27/2WhmpHljcZ6XNA9.webp)
+
+### LoRA & QLoRA
+
+LoRA: Low Rank Adaptation of Large Language Models
+
+-   LLM 的参数量主要集中在模型中的 Linear，训练这些参数会耗费大量的显存
+-   LoRA 通过在原本的 Linear 旁，新增一个支路，包含两个连续的小 Linear，新增的这个支路通常叫做 Adapter
+-   Adapter 参数量远小于原本的 Linear，能大幅降低训练的显存消耗
+
+![LoRA](https://s2.loli.net/2024/01/27/hBZQrUXwIOPpH2S.webp)
+
+想象一下，你有一个超大的玩具，现在你想改造这个超大的玩具。但是，对整个玩具进行全面的改动会非常昂贵。因此，你找到了一种叫 LoRA 的方法：只对玩具中的某些零件进行改动，而不是对整个玩具进行全面改动。而 QLoRA 是 LoRA 的一种改进：如果你手里只有一把生锈的螺丝刀，也能改造你的玩具。
+
+-   **Full** : 😳 → 🚲
+-   **[LoRA](http://arxiv.org/abs/2106.09685)** : 😳 → 🛵
+-   **[QLoRA](http://arxiv.org/abs/2305.14314)** : 😳 → 🏍
+
+![LoRA & QLoRA](https://s2.loli.net/2024/01/27/bWO2I3BHdrEQcUa.webp)
 
 ## L5 LMDeploy 大模型量化部署实践
 

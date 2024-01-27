@@ -252,21 +252,59 @@ NOTE: Pressing <ESC> will place you in Normal mode or will cancel
 没有特别说明都是在 normal modal 下，`<...>`表示 keys，`[...]`表示 optional
 
 1. 查找整个单词 search a whole word: `/\<word\>`, `\<` represents the beginning of a word, and `\>` represents the end of a word
+
 2. 插入多个空行 insert multiple new lines: `[count]o<Esc>`, `[count]O<Esc>`
+
 3. 在行首第一个非空字符插入 insert at the first non-blank character of the line: `I`, `Shift+i`
+
 4. 在行尾插入 insert at end of line: `A`, `Shift+a`
+
 5. 注释插件 [nerdcommenter](https://github.com/preservim/nerdcommenter), visual and normal modal: 块注释`[count]<Leader>cs`，行注释`[count]<Leader>cc`，取消注释`[count]<leader>cu`，行尾注释 `<Leader>cA`
+
 6. 选中所有 select all: `ggVG`
+
 7. 修改一个单词 change a word: `cw`
+
 8. 在多行同样的位置进行修改 visual-block mode: `<C-q>[hjkl]I[...]<Esc>`
+
 9. 修改括号内的内容 change in the parentheses:`ci(`，修改括号以及内容 change around parentheses: `ca(`
+
 10. 分屏 split a window: `:split`/`:sp`, vertically `:vsplit`/`:vsp`，换屏 change a window`<C-w> [whjkl]`
+
 11. 标签页 `:tabnew [filename]`，切换 next tab `gt`, previous tab `gT`
+
 12. 快速用`()`包括 [auto-pairs](https://github.com/LunarWatcher/auto-pairs) fast wrap: insert mode `<C-f>`, (|)'hello' after fast wrap at |, the word will be ('hello')
+
 13. 复制到系统剪切板[vim-oscyank](https://github.com/ojroques/vim-oscyank) copy to system clipborad: visual mode `<Leader>c`
+
 14. 得到一个配置的值 get a set's value: `:set name?`
+
 15. 跳转下一个光标的位置 go to new cursor position in jump list: `<C-i>`，跳转上一个光标的位置 go to older cursor position in jump list: `<C-o>`
-16. 查看 yank 的 register `:reigsters` ，粘贴并覆盖一个单词，在 visual mode 下 `vep`
+
+16. Registers
+
+    -   `:reg[isters]`: Display the type and contents of all numbered and named registers.
+    -   `"{register}`: Use {register} for next delete, yank or put.
+
+17. 查看 yank 的 register `:reigsters` ，粘贴并覆盖一个单词，在 visual mode 下 `vep`
+
+18. 折叠代码：
+
+    -   `zc`: Close one fold under the cursor.
+    -   `zC`: Close all folds under the cursor recursively.
+    -   `zo`: Open one fold under the cursor.
+    -   `zO`: Open all folds under the cursor recursively.
+    -   `za`: Toggle the fold under the cursor.
+
+19. 重复上一次操作：
+
+    -   `.`: Repeat last change, with count replaced with [count].
+    -   Simple changes can be repeated with the "." command.  Without a count, the
+        count of the last change is used.
+
+20. `vim-surround`:
+
+    
 
 ## neovim :simple-neovim:
 
