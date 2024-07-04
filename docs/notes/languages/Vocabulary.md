@@ -35,3 +35,9 @@ Useful dictionaries:
       - `-1e20`: Minus ten to the twentieth
       - `2^10`: Two to the tenth
       - `18 mod 16 = 2`: 18 modules of 16 is 2
+
+7.   Under the hood
+     -   在某物的内部工作过程
+     -   If you want to know how this office works, you need to look under the hood at the real workers.
+     -   Hood: 衣服上的兜帽；汽车引擎盖
+     -   Hoody: 套头衫；卫衣

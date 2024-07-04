@@ -23,7 +23,7 @@ comments: true
     hello world
     'hello world\n'
     >>> stdin.readline()
-
+    
     '\n'
     ```
 
@@ -80,3 +80,59 @@ comments: true
     >>> f'{14:#o}', f'{14:o}'
     ('0o16', '16')
     ```
+
+## IPython Tips
+
+1.   如果你不确定 function, class, or method 的使用方法，打印 `__doc__` 属性，查看文档，或者在 IPython 中语句末尾加上一个 question mark `?` ，两个 `??` 查看更详细的内容
+
+     ```python
+     In [17]: print(spark.read.__doc__)
+     
+         Interface used to load a :class:`DataFrame` from external storage systems
+         (e.g. file systems, key-value stores, etc). Use :attr:`SparkSession.read`
+         to access this.
+     
+         .. versionadded:: 1.4.0
+     
+         .. versionchanged:: 3.4.0
+             Supports Spark Connect.
+     
+     
+     In [18]: spark.read?
+     Type:        property
+     String form: <property object at 0x104841b20>
+     Docstring:
+     Returns a :class:`DataFrameReader` that can be used to read data
+     in as a :class:`DataFrame`.
+     
+     .. versionadded:: 2.0.0
+     
+     .. versionchanged:: 3.4.0
+         Supports Spark Connect.
+     
+     Returns
+     -------
+     :class:`DataFrameReader`
+     
+     Examples
+     --------
+     >>> spark.read
+     <...DataFrameReader object ...>
+     
+     Write a DataFrame into a JSON file and read it back.
+     
+     >>> import tempfile
+     >>> with tempfile.TemporaryDirectory() as d:
+     ...     # Write a DataFrame into a JSON file
+     ...     spark.createDataFrame(
+     ...         [{"age": 100, "name": "Hyukjin Kwon"}]
+     ...     ).write.mode("overwrite").format("json").save(d)
+     ...
+     ...     # Read the JSON file as a DataFrame.
+     ...     spark.read.format('json').load(d).show()
+     +---+------------+
+     |age|        name|
+     +---+------------+
+     |100|Hyukjin Kwon|
+     +---+------------+
+     ```

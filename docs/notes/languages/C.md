@@ -55,8 +55,7 @@ comments: true
               compiler proper.  The output is in the form of
               preprocessed source code, which is sent to the standard
               output.
-
+    
               Input files that don't require preprocessing are ignored.
     ```
 
-##

@@ -251,7 +251,7 @@ NOTE: Pressing <ESC> will place you in Normal mode or will cancel
 
 没有特别说明都是在 normal modal 下，`<...>`表示 keys，`[...]`表示 optional
 
-1. 查找整个单词 search a whole word: `/\<word\>`, `\<` represents the beginning of a word, and `\>` represents the end of a word
+1. 查找整个单词 l a whole word: `/\<word\>`, `\<` represents the beginning of a word, and `\>` represents the end of a word
 
 2. 插入多个空行 insert multiple new lines: `[count]o<Esc>`, `[count]O<Esc>`
 
@@ -302,9 +302,21 @@ NOTE: Pressing <ESC> will place you in Normal mode or will cancel
     -   Simple changes can be repeated with the "." command.  Without a count, the
         count of the last change is used.
 
-20. `vim-surround`:
+20. In older Vim 7 粘贴时自动转为paste mode
 
+    ```plaintext
+    let &t_SI .= "\<Esc>[?2004h" 
+    let &t_EI .= "\<Esc>[?2004l" 
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin() 
     
+    function! XTermPasteBegin()
+      set pastetoggle=<Esc>[201~
+      set paste
+      return ""
+    endfunction
+    ```
+
+21. `vim-surround`
 
 ## neovim :simple-neovim:
 

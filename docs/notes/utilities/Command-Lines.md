@@ -12,6 +12,81 @@ comments: true
 2. Commands for Manipulating The History
     -   <https://www.gnu.org/software/bash/manual/html_node/Commands-For-History.html>
     -   reverse-search-history (C-r)
+3. Read from standard input and write to standard output and files
+    -   `echo "example" | tee path/to/file`
+
+## ZSH
+
+Environment: No Internet, no `sudo` root privilege.
+
+Install ZSH under user directory. Download ZSH source code: <https://sourceforge.net/projects/zsh/>
+
+1. Extract
+
+    ```shell
+    xz -d zsh-5.9.tar.xz
+    tar -xf zsh-5.9.tar
+    cd zsh-5.9
+    ```
+
+2. Compile ZSH
+
+    ```shell
+    ./configure --prefix=/home/chenlu/.local/lib/zsh-5.9
+    make
+    make install
+    ```
+
+3. Create soft link
+
+    ```shell
+    ln -s ~/.local/lib/zsh-5.9/bin/zsh ~/.local/bin/zsh
+    ```
+
+Install oh-my-zsh. Download oh-my-zsh source code: <https://github.com/ohmyzsh/ohmyzsh>
+
+You can create a new zsh config file by copying the template that we have included for you.
+
+```shell
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+```
+
+Install powerlevel10k. <https://github.com/romkatv/powerlevel10k#how-do-i-install-powerlevel10k-on-a-machine-without-internet-access>
+
+1.  Run this command on the machine without Internet access:
+
+    ```shell
+    uname -sm | tr '[A-Z]' '[a-z]'
+    ```
+
+2.  Run these commands on a machine connected to the Internet after replacing the value of `target_uname` with the output of the previous command:
+
+    ```shell
+    target_uname="replace this with the output of the previous command"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+    GITSTATUS_CACHE_DIR="$HOME"/powerlevel10k/gitstatus/usrbin ~/powerlevel10k/gitstatus/install -f -s "${target_uname% *}" -m "${target_uname#* }"
+    ```
+
+3.  Copy `~/powerlevel10k` from the machine connected to the Internet to the one without Internet access.
+
+4.  Add `source ~/powerlevel10k/powerlevel10k.zsh-theme` to `~/.zshrc` on the machine without Internet access:
+
+    ```shell
+    echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+    ```
+
+5.  If `~/.zshrc` on the machine without Internet access sets `ZSH_THEME`, remove that line.
+
+    ```shell
+    sed -i.bak '/^ZSH_THEME=/d' ~/.zshrc
+    ```
+
+To update, remove `~/powerlevel10k` on both machines and repeat steps 1-3.
+
+```shell
+mv ~/powerlevel10k ~/.oh-my-zsh/custom/themes/
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
 
 ## GDB :simple-gnu:
 
@@ -217,3 +292,43 @@ rm -rf brew-install
     - load: `docker load -i oracle-ee.tar`
 
 ## Tmux :simple-tmux:
+
+Document: <https://github.com/tmux/tmux/wiki/Getting-Started#getting-started>
+
+`.tmux.conf`
+
+<script src="https://gist.github.com/linkch0/5d3c6d9a2291918f709fca753f8f939a.js"></script>
+
+1.   The prefix key
+     -   `C-b`, Control + B
+     -   `C-` for the control key
+     -   `M-` for the meta key (normally `Alt` on modern computers)
+     -   `S-` for the shift key
+2.   Help keys `C-b ?`
+3.   Window operations
+     -   Create `C-b c`
+     -   Split horizontally `C-b s`
+     -   Split vertically `C-b v`
+4.   Select pane
+     -   Up `C-b k`
+     -   Down `C-b j`
+     -   Left `C-b h`
+     -   Right `C-b l`
+5.   Copy mode and using vi movement `C-b [`
+6.   Display pane numbers `C-b q`
+7.   Kill the active pane `C-b x`
+8.   Resize pane by 5
+     -   Up `C-b M-Up`
+     -   Down `C-b M-Down`
+     -   Left `C-b M-Left`
+     -   Right `C-b M-Right`
+9.   Run shell commands
+     -   `run` or `run-shell`
+     -   e.g. `run pwd`
+
+10.   Formats
+      -   Document: <https://github.com/tmux/tmux/wiki/Formats>
+      -   Display a format `tmux display -p #{}`
+      -   e.g. `tmux display -p '#{pid}'`
+      -   e.g. `tmux display -p '#{status-right}'`
+
