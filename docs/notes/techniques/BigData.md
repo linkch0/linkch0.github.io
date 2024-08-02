@@ -417,7 +417,10 @@ PySpark uses a translation layer to call JVM functions for its core functions. F
      
 7.   StatsDev
      -   <https://cwiki.apache.org/confluence/display/Hive/StatsDev>
-     -   <https://www.cnblogs.com/coco2015/p/15870532.html>，当 `COUNT(*)` 为 0 时，使用 `analyze table <table_name> compute statistics;` 更新 metastore，或者 `set hive.compute.query.using.stats=false;`
+     -   <https://www.cnblogs.com/coco2015/p/15870532.html>，当 `COUNT(*)` 为 0 时：
+     -    `ANALYZE TABLE <table_name> [PARTITION(col=val)] COMPUTE STATISTICS;` 更新 metastore
+     -   或者 `SET hive.compute.query.using.stats=false;`
+     -   `DESC EXTENDED <table_name> [PARTITION(col=val)];`
      
 8.   Beeline CLI
      -   <https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients>
