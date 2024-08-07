@@ -73,21 +73,21 @@ AgentLego: <https://github.com/InternLM/agentlego>
 
 1.   Command Line Demo:
 
-     ![Cli Demo](https://github.com/InternLM/Tutorial/blob/camp1/helloworld/images/image-18.png)
+     ![Cli Demo](https://raw.githubusercontent.com/InternLM/Tutorial/camp1/helloworld/images/image-18.png)
 
 2.   Streamlit Web Demo:
 
-     ![Web Demo](https://github.com/InternLM/Tutorial/blob/camp1/helloworld/images/image-6.png)
+     ![Web Demo](https://raw.githubusercontent.com/InternLM/Tutorial/camp1/helloworld/images/image-6.png)
 
 ### Lagent 智能体工具调用 Demo
 
 `Lagent`：<https://github.com/InternLM/lagent> 是一个轻量级、开源的基于大语言模型的智能体（agent）框架，支持用户快速地将一个大语言模型转变为多种类型的智能体，并提供了一些典型工具为大语言模型赋能。架构如图所示：
 
-![Lagent](https://github.com/InternLM/Tutorial/blob/camp1/helloworld/images/Lagent.png)
+![Lagent](https://raw.githubusercontent.com/InternLM/Tutorial/camp1/helloworld/images/Lagent.png)
 
 在 `Web` 页面选择 `InternLM` 模型，等待模型加载完毕后，输入数学问题 已知 `2x+3=10`，求`x` ,此时 `InternLM-Chat-7B` 模型理解题意生成解此题的 `Python` 代码，`Lagent` 调度送入 `Python` 代码解释器求出该问题的解。
 
-![Lagent Demo](https://github.com/InternLM/Tutorial/blob/camp1/helloworld/images/image-7.png)
+![Lagent Demo](https://raw.githubusercontent.com/InternLM/Tutorial/camp1/helloworld/images/image-7.png)
 
 ### 浦语·灵笔图文理解创作 Demo
 
@@ -95,11 +95,11 @@ AgentLego: <https://github.com/InternLM/agentlego>
 
 1.   图文创作：
 
-     ![又见敦煌](https://github.com/InternLM/Tutorial/blob/camp1/helloworld/images/image-9.png)
+     ![又见敦煌](https://raw.githubusercontent.com/InternLM/Tutorial/camp1/helloworld/images/image-9.png)
 
 2.   图片理解：
 
-     ![K-On](https://github.com/InternLM/Tutorial/blob/camp1/helloworld/images/image-10.png)
+     ![K-On](https://raw.githubusercontent.com/InternLM/Tutorial/camp1/helloworld/images/image-10.png)
 
 ## L3 基于 InternLM 和 Langchain 搭建你的知识库
 
