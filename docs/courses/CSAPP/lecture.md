@@ -4,7 +4,7 @@ tags: [Updating]
 comments: true
 ---
 
-# Lecture Notes
+# Lectures
 
 ## 01 Overview
 

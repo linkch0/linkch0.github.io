@@ -4,7 +4,7 @@ tags: [Updating]
 comments: true
 ---
 
-# Lab Notes
+# Labs
 
 ## 1 Data Lab
 

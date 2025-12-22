@@ -22,7 +22,7 @@ comments: true
 
 ## iTerm2 :simple-iterm2:
 
-1. Swtich between split window `Option + Command + Arrow`
+1. Switch between split window `Option + Command + Arrow`
 1. Open profiles `Command + O`
 1. Password Manager `Option + Command + F` 
 

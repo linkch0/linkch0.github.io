@@ -6,6 +6,52 @@ comments: true
 
 # Python
 
+Doc: <https://docs.python.org/dev/tutorial/index.html>
+
+## datetime
+
+### datetime
+
+A [`datetime`](https://docs.python.org/dev/library/datetime.html#datetime.datetime) object is a single object containing all the information from a [`date`](https://docs.python.org/dev/library/datetime.html#datetime.date) object and a [`time`](https://docs.python.org/dev/library/datetime.html#datetime.time) object.
+
+```python
+[ins] In [27]: from datetime import datetime, timedelta
+
+[ins] In [31]: dt = datetime.now()
+
+[ins] In [32]: dt
+Out[32]: datetime.datetime(2024, 8, 20, 14, 10, 8, 566237)
+
+[ins] In [33]: dt.strftime("%Y-%m-%d %H:%M:%S")
+Out[33]: '2024-08-20 14:10:08'
+
+[ins] In [34]: datetime.strptime("20240820", "%Y%m%d")
+Out[34]: datetime.datetime(2024, 8, 20, 0, 0)
+```
+
+| Method         | `strftime`                                                   | `strptime`                                                   |
+| :------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
+| Usage          | Convert object to a string according to a given format       | Parse a string into a [`datetime`](https://docs.python.org/dev/library/datetime.html#datetime.datetime) object given a corresponding format |
+| Type of method | Instance method                                              | Class method                                                 |
+| Method of      | [`date`](https://docs.python.org/dev/library/datetime.html#datetime.date); [`datetime`](https://docs.python.org/dev/library/datetime.html#datetime.datetime); [`time`](https://docs.python.org/dev/library/datetime.html#datetime.time) | [`datetime`](https://docs.python.org/dev/library/datetime.html#datetime.datetime) |
+| Signature      | `strftime(format)`                                           | `strptime(date_string, format)`                              |
+
+### timedelta
+
+A [`timedelta`](https://docs.python.org/dev/library/datetime.html#datetime.timedelta) object represents a duration, the difference between two [`datetime`](https://docs.python.org/dev/library/datetime.html#datetime.datetime) or [`date`](https://docs.python.org/dev/library/datetime.html#datetime.date) instances.
+
+```python
+[ins] In [27]: from datetime import datetime, timedelta
+
+[ins] In [28]: now = datetime.now()
+
+[ins] In [29]: timedelta(days=365)
+Out[29]: datetime.timedelta(days=365)
+
+[ins] In [30]: now - timedelta(days=365)
+Out[30]: datetime.datetime(2023, 8, 21, 14, 8, 22, 953271)
+```
+
 ## sys
 
 1. `sys.byteorder`: An indicator of the native byte order. Edianness output `little` or `big`.

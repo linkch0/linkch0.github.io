@@ -1,10 +1,11 @@
 ---
 icon: fontawesome/solid/chalkboard-user
-tags: [Updating]
 comments: true
+hide:
+  - navigation
 ---
 
-#  笔记
+# Lectures
 
 书生·浦语大模型实战营
 

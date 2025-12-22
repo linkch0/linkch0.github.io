@@ -2,6 +2,8 @@
 icon: simple/apachespark
 tags: [Updating]
 comments: true
+hide:
+  - navigation
 ---
 
 # Big Data
@@ -9,6 +11,10 @@ comments: true
 Reference:
 
 1.   Data Analysis with Python and PySpark,  ISBN: 9781617297205
+
+2.   Hadoop: The Definitive Guide 4th Edition, ISBN: 9781491901632
+
+3.   <https://github.com/heibaiying/BigData-Notes>
 
 ## Glossary
 
@@ -378,21 +384,21 @@ PySpark uses a translation layer to call JVM functions for its core functions. F
 1.   HiveQL Data Definition Language (DDL)  HiveQL 语法
      -   <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL>
      -   `TIME` 属于保留字
-     
+
 2.   Hive Operators 运算符
      -   https://cwiki.apache.org/confluence/display/Hive/Hive+Operators
      -   `A <> B`: NULL if A or B is NULL, TRUE if expression A is NOT equal to expression B, otherwise FALSE.
-     
+
 3.   Hive Data Types 数据类型
      -   <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types>
      -   INT/INTEGER (4-byte signed integer, from -2,147,483,648 to 2,147,483,647)
-     
+
 4.   Managed vs. External Tables 内部表和外部表的区别
      -   <https://cwiki.apache.org/confluence/display/Hive/Managed+vs.+External+Tables>
      -   <https://zhuanlan.zhihu.com/p/580296016>
      -   内部表：Use managed tables when Hive should manage the lifecycle of the table, or when generating temporary tables.
      -   外部表：Use external tables when files are already present or in remote locations, and the files should remain even if the table is dropped.
-     
+
 5.   Hive Operators and User-Defined Functions (UDFs)
      -   <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF>
      -   `regexp_replace(string INITIAL_STRING, string PATTERN, string REPLACEMENT)`
@@ -404,7 +410,7 @@ PySpark uses a translation layer to call JVM functions for its core functions. F
      -   `from_unixtime(bigint unixtime[, string pattern])`
          -   Converts a number of seconds since epoch (1970-01-01 00:00:00 UTC) to a string representing the timestamp of that moment in the current time zone(using config "hive.local.time.zone") using the specified pattern.
          -   时区问题：<https://blog.csdn.net/weixin_38251332/article/details/122101966>
-     
+
 6.   Hive CLI
      -   <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli>
      -   `hive -i <filename>`, Initialization SQL file
@@ -414,14 +420,14 @@ PySpark uses a translation layer to call JVM functions for its core functions. F
      -   `hive -i <init_sql> -f <script_sql>`
      -   传入参数variable
          -   `hive --hivevar queue=default`
-     
+
 7.   StatsDev
      -   <https://cwiki.apache.org/confluence/display/Hive/StatsDev>
      -   <https://www.cnblogs.com/coco2015/p/15870532.html>，当 `COUNT(*)` 为 0 时：
      -    `ANALYZE TABLE <table_name> [PARTITION(col=val)] COMPUTE STATISTICS;` 更新 metastore
      -   或者 `SET hive.compute.query.using.stats=false;`
      -   `DESC EXTENDED <table_name> [PARTITION(col=val)];`
-     
+
 8.   Beeline CLI
      -   <https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients>
      -   `beeline -u <database_url>`, The JDBC URL to connect to
@@ -432,26 +438,26 @@ PySpark uses a translation layer to call JVM functions for its core functions. F
      -   `--silent=[true/false]`
          -   Reduce the amount of informational messages displayed (true) or not (false).
          -   `grep -v '^$' <csv_file>` 删掉空行
-     
+
 9.   时区问题
      -   Hive 版本 3.1.4 `FROM_UNIXTIME()` 和 `UNIX_TIMESTAMP()` 都是按 UTC 时区来，和中国时区差8小时
      -   问题描述：<https://www.baifachuan.com/posts/2f3913c8.html>
      -   源码地址：<https://archive.apache.org/dist/hadoop/core/hadoop-3.1.4/>
-     
+
 10.   Hive Configuration Properties
       -   <https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties>
-      
+
       -   设置队列 `hive --hivevar queue=<queue_name>`
-      
+
           ```hive
           -- Set queue to variable
           SET tez.queue.name = ${queue};
           SET mapreduce.job.queuename = ${queue};
           SET mapred.job.queue.name = ${queue};
           ```
-      
+
       -   合并小文件
-      
+
           ```hive
           -- Merge small files to 128MB, using Tez as execution engine
           SET hive.merge.tezfiles = true;
@@ -461,9 +467,13 @@ PySpark uses a translation layer to call JVM functions for its core functions. F
           SET hive.merge.size.per.task = 128000000;
           SET hive.merge.smallfiles.avgsize = 128000000;
           ```
-      
+
       -   Map Reduce config: <https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml>
       -   Tez config: <https://tez.apache.org/releases/0.8.2/tez-api-javadocs/configs/TezConfiguration.html>
+
+11.   Materialized views
+
+      -   <https://cwiki.apache.org/confluence/display/Hive/Materialized+views>
 
 ## Hadoop
 
@@ -491,3 +501,119 @@ Document: <https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/Y
      -   `yarn logs -containerId <container_id> | less`
 5.   Kill an application
      -   `yarn app -kill <app_id>`
+
+### Hadoop Distributed File System (HDFS)
+
+#### 1 介绍
+
+References:
+
+1.   <https://github.com/heibaiying/BigData-Notes/blob/master/notes/Hadoop-HDFS.md>
+2.   <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html>
+
+**HDFS** （**Hadoop Distributed File System**）是 Hadoop 下的分布式文件系统，具有高容错、高吞吐量等特性，可以部署在低成本的硬件上。
+
+#### 2 HDFS 设计原理
+
+![HDFS Architecture](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/images/hdfsarchitecture.png)
+
+##### 2.1 HDFS 架构
+
+HDFS 遵循主/从架构，由单个 NameNode(NN) 和多个 DataNode(DN) 组成：
+
+- **NameNode** : 负责执行有关 ` 文件系统命名空间 ` 的操作，例如打开，关闭、重命名文件和目录等。它同时还负责集群元数据的存储，记录着文件中各个数据块的位置信息。
+- **DataNode**：负责提供来自文件系统客户端的读写请求，执行块的创建，删除等操作。
+
+##### 2.2 文件系统命名空间 The File System Namespace
+
+HDFS 的 ` 文件系统命名空间 ` 的层次结构与大多数文件系统类似 (如 Linux)， 支持目录和文件的创建、移动、删除和重命名等操作，支持配置用户和访问权限，但不支持硬链接和软连接。`NameNode` 负责维护文件系统名称空间，记录对名称空间或其属性的任何更改。
+
+##### 2.3 数据复制 Data Replication
+
+由于 Hadoop 被设计运行在廉价的机器上，这意味着硬件是不可靠的，为了保证容错性，HDFS 提供了数据复制机制。HDFS 将每一个文件存储为一系列**块**，每个块由多个副本来保证容错，块的大小和复制因子可以自行配置（默认情况下，块大小是 128M，默认复制因子是 3）。
+
+![Replication](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/images/hdfsdatanodes.png)
+
+##### 2.4 数据复制的实现原理
+
+大型的 HDFS 实例在通常分布在多个机架的多台服务器上，不同机架上的两台服务器之间通过交换机进行通讯。在大多数情况下，同一机架中的服务器间的网络带宽大于不同机架中的服务器之间的带宽。因此 HDFS 采用机架感知副本放置策略，对于常见情况，当复制因子为 3 时，HDFS 的放置策略是：
+
+在写入程序位于 `datanode` 上时，就优先将写入文件的一个副本放置在该 `datanode` 上，否则放在随机 `datanode` 上。之后在另一个远程机架上的任意一个节点上放置另一个副本，并在该机架上的另一个节点上放置最后一个副本。此策略可以减少机架间的写入流量，从而提高写入性能。
+
+![rack](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-机架.png)
+
+如果复制因子大于 3，则随机确定第 4 个和之后副本的放置位置，同时保持每个机架的副本数量低于上限，上限值通常为 `（复制系数 - 1）/机架数量 + 2`，需要注意的是不允许同一个 `dataNode` 上具有同一个块的多个副本。
+
+##### 2.5  副本的选择
+
+为了最大限度地减少带宽消耗和读取延迟，HDFS 在执行读取请求时，优先读取距离读取器最近的副本。如果在与读取器节点相同的机架上存在副本，则优先选择该副本。如果 HDFS 群集跨越多个数据中心，则优先选择本地数据中心上的副本。
+
+##### 2.6 架构的稳定性
+
+1.   心跳机制和重新复制
+
+     每个 DataNode 定期向 NameNode 发送心跳消息，如果超过指定时间没有收到心跳消息，则将 DataNode 标记为死亡。NameNode 不会将任何新的 IO 请求转发给标记为死亡的 DataNode，也不会再使用这些 DataNode 上的数据。 由于数据不再可用，可能会导致某些块的复制因子小于其指定值，NameNode 会跟踪这些块，并在必要的时候进行重新复制。
+
+2. 数据的完整性
+
+    由于存储设备故障等原因，存储在 DataNode 上的数据块也会发生损坏。为了避免读取到已经损坏的数据而导致错误，HDFS 提供了数据完整性校验机制来保证数据的完整性，具体操作如下：
+
+    当客户端创建 HDFS 文件时，它会计算文件的每个块的 ` 校验和 `，并将 ` 校验和 ` 存储在同一 HDFS 命名空间下的单独的隐藏文件中。当客户端检索文件内容时，它会验证从每个 DataNode 接收的数据是否与存储在关联校验和文件中的 ` 校验和 ` 匹配。如果匹配失败，则证明数据已经损坏，此时客户端会选择从其他 DataNode 获取该块的其他可用副本。
+
+3.   元数据的磁盘故障
+
+     `FsImage` 和 `EditLog` 是 HDFS 的核心数据，这些数据的意外丢失可能会导致整个 HDFS 服务不可用。为了避免这个问题，可以配置 NameNode 使其支持 `FsImage` 和 `EditLog` 多副本同步，这样 `FsImage` 或 `EditLog` 的任何改变都会引起每个副本 `FsImage` 和 `EditLog` 的同步更新。
+
+4.   支持快照
+
+     快照支持在特定时刻存储数据副本，在数据意外损坏时，可以通过回滚操作恢复到健康的数据状态。
+
+#### 3 HDFS 的特点
+
+1. 高容错
+
+    由于 HDFS 采用数据的多副本方案，所以部分硬件的损坏不会导致全部数据的丢失。
+
+2. 高吞吐量
+
+    HDFS 设计的重点是支持高吞吐量的数据访问，而不是低延迟的数据访问。
+
+3.   大文件支持
+
+     HDFS 适合于大文件的存储，文档的大小应该是是 GB 到 TB 级别的。
+
+4.   简单一致性模型
+
+     HDFS 更适合于一次写入多次读取 (write-once-read-many) 的访问模型。支持将内容追加到文件末尾，但不支持数据的随机访问，不能从文件任意位置新增数据。
+
+5.   跨平台移植性
+
+     HDFS 具有良好的跨平台移植性，这使得其他大数据计算框架都将其作为数据持久化存储的首选方案。
+
+#### 附：图解HDFS存储原理
+
+> 说明：以下图片引用自博客：[翻译经典 HDFS 原理讲解漫画](https://blog.csdn.net/hudiefenmu/article/details/37655491)
+
+##### 1. HDFS写数据原理
+
+![HDFS Write 1](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-1.jpg)
+
+![HDFS Write 2](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-2.jpg)
+
+![HDFS Write 3](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-3.jpg)
+
+##### 2. HDFS读数据原理
+
+![HDFS Read](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-read-1.jpg)
+
+##### 3. HDFS故障类型和其检测方法
+
+![HDFS Tolerance 1](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-1.jpg)
+
+![HDFS Tolerance 2](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-2.jpg)
+
+![HDFS Tolerance 3](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-3.jpg)
+
+![HDFS Tolerance 4](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-4.jpg)
+
+![HDFS Tolerance 5](https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-5.jpg)

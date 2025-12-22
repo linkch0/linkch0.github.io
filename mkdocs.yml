@@ -125,7 +125,7 @@ nav:
               - notes/utilities/Softwares.md
           - Techniques:
               - notes/techniques/BigData.md
-              - notes/techniques/Natural-Language-Processing.md
+              - notes/techniques/NLP.md
           - Languages:
               - notes/languages/C.md
               - notes/languages/Java.md
@@ -137,9 +137,13 @@ nav:
       - blog/index.md
   - Courses:
       - courses/index.md
-      - "InternLM":
-          - courses/InternLM/lecture.md
-          - courses/InternLM/assignment.md
+      - LLM:
+          - CS336:
+              - courses/LLM/CS336/introduction.md
+              - courses/LLM/CS336/lecture.md
+          - InternLM:
+              - courses/LLM/InternLM/lecture.md
+              - courses/LLM/InternLM/assignment.md
       - Algorithms:
           - courses/Algorithms/introduction.md
       - CSAPP:
@@ -148,12 +152,12 @@ nav:
           - courses/CSAPP/lab.md
       - Operating Systems:
           - courses/OS_JYY/introduction.md
-      - Python:
-          - courses/PythonNB/numpy.ipynb
-          - courses/PythonNB/pandas.ipynb
-          - courses/PythonNB/matplotlib.ipynb
-          - courses/PythonNB/scikit-learn.ipynb
-          - courses/PythonNB/torch.ipynb
-          - courses/PythonNB/hugging-face.ipynb
+      - Python Libraries:
+          - courses/PythonLibs/numpy.ipynb
+          - courses/PythonLibs/pandas.ipynb
+          - courses/PythonLibs/scikit-learn.ipynb
+          - courses/PythonLibs/torch.ipynb
+          - courses/PythonLibs/hugging-face.ipynb
+          - courses/PythonLibs/matplotlib-seaborn-plotly.ipynb
   - Projects:
       - projects/index.md

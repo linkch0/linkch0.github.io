@@ -1,10 +1,11 @@
 ---
 icon: fontawesome/solid/pen
-tags: [Updating]
 comments: true
+hide:
+  - navigation
 ---
 
-#  作业
+# Assignments
 
 ## L2 轻松玩转书生·浦语大模型趣味 Demo
 
