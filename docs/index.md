@@ -7,12 +7,35 @@ icon: material/home-outline
 
 Hi there :wave:, this is Link Chen :man_technologist:.
 
-## GitHub Stats Card
+## Employment
 
-Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
+<div class="grid cards" markdown>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linkch0&theme=transparent&show_icons=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&theme=transparent&layout=compact&langs_count=8)
+-   :fontawesome-solid-chalkboard-teacher:: **Teaching Assistant**
+
+    ***
+
+    [![HKU CDS](assets/images/HKU-CDS-Logo.svg)](https://www.cds.hku.hk/)
+
+    **HKU-CDS Teaching and Research Site in Shanghai**
+
+    - Zhangjiang, Pudong, Shanghai, China
+    - 2026.01 - Present
+
+-   :fontawesome-solid-code: **R&D Engineer**
+
+    ***
+
+    [![E-surfing Digital Life Technology Co., Ltd.](assets/images/Digital-Life-Logo.png)](https://dlife.cn/)
+
+    **E-surfing Digital Life Technology Co., Ltd.**
+
+    - Jing'an, Shanghai, China
+    - 2024.01 - 2026.01
+    - AI & Big Data Center
+    - Subsidiary of China Telecom Corporation Limited
+
+</div>
 
 ## Education
 
@@ -30,8 +53,6 @@ Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-s
     -   2022.09 - 2023.11
     -   [MSc in Computer Science](https://www.msc-cs.hku.hk/)
     -   Supervised by [Hengshuang Zhao](https://hszhao.github.io/)
-    <!-- -   [Department of Computer Science](https://www.cs.hku.hk/)
-    -   [Faculty of Engineering](https://engg.hku.hk/) -->
 
 -   :fontawesome-solid-graduation-cap: **Bachelor of Engineering (BEng)**
 
@@ -47,6 +68,13 @@ Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-s
     -   Supervised By [Weizhong Lu](https://eie.usts.edu.cn/info/1120/2956.htm)
 
 </div>
+
+## GitHub Stats Card
+
+Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linkch0&theme=transparent&show_icons=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&theme=transparent&layout=compact&langs_count=8)
 
 ## Pageviews
 

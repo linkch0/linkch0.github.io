@@ -7,12 +7,35 @@ icon: material/face-man
 
 你好呀 :wave:，我是 Link Chen :man_technologist:。
 
-## GitHub 统计
+## 工作经历
 
-由 [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) 提供
+<div class="grid cards" markdown>
 
-![统计数据](https://github-readme-stats.vercel.app/api?username=linkch0&locale=cn&theme=transparent&show_icons=true)
-![常用语言](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&locale=cn&theme=transparent&layout=compact&langs_count=8)
+-   :fontawesome-solid-chalkboard-teacher:: **助教**
+
+    ***
+
+    [![香港大学计算与数据科学学院上海校区](assets/images/HKU-CDS-Logo.svg)](https://www.cds.hku.hk/)
+
+    **香港大学计算与数据科学学院上海校区**
+
+    - 中国上海浦东张江
+    - 2026.01 - 至今
+
+-   :fontawesome-solid-code: **研发工程师**
+
+    ***
+
+    [![天翼数字生活科技有限公司](assets/images/Digital-Life-Logo.png)](https://dlife.cn/)
+
+    **天翼数字生活科技有限公司**
+
+    - 中国上海静安
+    - 2024.01 - 2026.01
+    - AI大数据中心
+    - 中国电信集团专业公司
+
+</div>
 
 ## 教育背景
 
@@ -30,8 +53,6 @@ icon: material/face-man
     -   2022.09 - 2023.11
     -   [计算机科学，理学硕士](https://www.msc-cs.hku.hk/)
     -   导师 [Hengshuang Zhao](https://hszhao.github.io/)
-    <!-- -   [Department of Computer Science](https://www.cs.hku.hk/)
-    -   [Faculty of Engineering](https://engg.hku.hk/) -->
 
 -   :fontawesome-solid-graduation-cap: **工学学士**
 
@@ -47,6 +68,14 @@ icon: material/face-man
     -   导师 [陆卫忠](https://eie.usts.edu.cn/info/1120/2956.htm)
 
 </div>
+
+## GitHub 统计
+
+由 [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) 提供
+
+![统计数据](https://github-readme-stats.vercel.app/api?username=linkch0&locale=cn&theme=transparent&show_icons=true)
+![常用语言](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&locale=cn&theme=transparent&layout=compact&langs_count=8)
+
 
 ## 页面访问量
 
