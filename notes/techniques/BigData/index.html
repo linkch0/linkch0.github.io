@@ -13,7 +13,7 @@
         <link rel="prev" href="../../utilities/Softwares/">
       
       
-        <link rel="next" href="../../languages/C/">
+        <link rel="next" href="../NLP/">
       
       
         
@@ -344,7 +344,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1062,6 +1064,178 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hadoop-distributed-file-system-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hadoop Distributed File System (HDFS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hadoop Distributed File System (HDFS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 介绍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 HDFS 设计原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 HDFS 设计原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 HDFS 架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-file-system-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 文件系统命名空间 The File System Namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-data-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 数据复制 Data Replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 数据复制的实现原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 副本的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 架构的稳定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 HDFS 的特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附：图解HDFS存储原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附：图解HDFS存储原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. HDFS写数据原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hdfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. HDFS读数据原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hdfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. HDFS故障类型和其检测方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1083,14 +1257,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../Natural-Language-Processing.md" class="md-nav__link">
+      <a href="../NLP/" class="md-nav__link">
         
   
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056 3.522 2.064 1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624"></path></svg>
   
   <span class="md-ellipsis">
     
   
-    None
+    NLP
   
 
     
@@ -2078,7 +2254,7 @@
   <span class="md-ellipsis">
     
   
-    InternLM
+    LLM
   
 
     
@@ -2094,7 +2270,65 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    InternLM
+    LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS336
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CS336
   
 
           </label>
@@ -2107,16 +2341,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/InternLM/lecture/" class="md-nav__link">
+      <a href="../../../courses/LLM/CS336/introduction/" class="md-nav__link">
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M128 96c0-35.3 28.7-64 64-64h352c35.3 0 64 28.7 64 64v240h-96v-16c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v16H254.9c10.9-18.8 17.1-40.7 17.1-64 0-70.7-57.3-128-128-128-5.4 0-10.8.3-16 1zm205 352c-5.1-24.2-16.3-46.1-32.1-64H608c0 35.3-28.7 64-64 64zM64 272a80 80 0 1 1 160 0 80 80 0 1 1-160 0M0 480c0-53 43-96 96-96h96c53 0 96 43 96 96 0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.3 7.29c.2-.18.44-.29.7-.29.27 0 .5.11.71.29.19.21.29.45.29.71 0 .27-.1.5-.29.71-.21.19-.44.29-.71.29-.26 0-.5-.1-.7-.29-.19-.21-.3-.44-.3-.71 0-.26.11-.5.3-.71m-2.5 4.68s2.17-1.72 2.96-1.79c.74-.06.59.79.52 1.23l-.01.06c-.14.53-.31 1.17-.48 1.78-.38 1.39-.75 2.75-.66 3 .1.34.72-.09 1.17-.39.06-.04.11-.08.16-.11 0 0 .08-.08.16.03.02.03.04.06.06.08.09.14.14.19.02.27l-.04.02c-.22.15-1.16.81-1.54 1.05-.41.27-1.98 1.17-1.74-.58.21-1.23.49-2.29.71-3.12.41-1.5.59-2.18-.33-1.59-.37.22-.59.36-.72.45-.11.08-.12.08-.19-.05l-.03-.06-.05-.08c-.07-.1-.07-.11.03-.2M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2s10 4.5 10 10m-2 0c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8"></path></svg>
   
   <span class="md-ellipsis">
     
   
-    笔记
+    Introduction
   
 
     
@@ -2137,16 +2371,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/InternLM/assignment/" class="md-nav__link">
+      <a href="../../../courses/LLM/CS336/lecture/" class="md-nav__link">
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M352.9 21.2 308 66.1 445.9 204l44.9-44.9c13.6-13.5 21.2-31.9 21.2-51.1s-7.6-37.6-21.2-51.1l-35.7-35.7C441.6 7.6 423.2 0 404 0s-37.6 7.6-51.1 21.2M274.1 100 58.9 315.1c-10.7 10.7-18.5 24.1-22.6 38.7L.9 481.6c-2.3 8.3 0 17.3 6.2 23.4s15.1 8.5 23.4 6.2l127.8-35.5c14.6-4.1 27.9-11.8 38.7-22.6l215-215.2z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M128 96c0-35.3 28.7-64 64-64h352c35.3 0 64 28.7 64 64v240h-96v-16c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v16H254.9c10.9-18.8 17.1-40.7 17.1-64 0-70.7-57.3-128-128-128-5.4 0-10.8.3-16 1zm205 352c-5.1-24.2-16.3-46.1-32.1-64H608c0 35.3-28.7 64-64 64zM64 272a80 80 0 1 1 160 0 80 80 0 1 1-160 0M0 480c0-53 43-96 96-96h96c53 0 96 43 96 96 0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32"></path></svg>
   
   <span class="md-ellipsis">
     
   
-    作业
+    Lectures
   
 
     
@@ -2155,6 +2389,140 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InternLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    InternLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/LLM/InternLM/lecture/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M128 96c0-35.3 28.7-64 64-64h352c35.3 0 64 28.7 64 64v240h-96v-16c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v16H254.9c10.9-18.8 17.1-40.7 17.1-64 0-70.7-57.3-128-128-128-5.4 0-10.8.3-16 1zm205 352c-5.1-24.2-16.3-46.1-32.1-64H608c0 35.3-28.7 64-64 64zM64 272a80 80 0 1 1 160 0 80 80 0 1 1-160 0M0 480c0-53 43-96 96-96h96c53 0 96 43 96 96 0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/LLM/InternLM/assignment/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M352.9 21.2 308 66.1 445.9 204l44.9-44.9c13.6-13.5 21.2-31.9 21.2-51.1s-7.6-37.6-21.2-51.1l-35.7-35.7C441.6 7.6 423.2 0 404 0s-37.6 7.6-51.1 21.2M274.1 100 58.9 315.1c-10.7 10.7-18.5 24.1-22.6 38.7L.9 481.6c-2.3 8.3 0 17.3 6.2 23.4s15.1 8.5 23.4 6.2l127.8-35.5c14.6-4.1 27.9-11.8 38.7-22.6l215-215.2z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2368,7 +2736,7 @@
   <span class="md-ellipsis">
     
   
-    Lecture Notes
+    Lectures
   
 
     
@@ -2398,7 +2766,7 @@
   <span class="md-ellipsis">
     
   
-    Lab Notes
+    Labs
   
 
     
@@ -2558,7 +2926,7 @@
   <span class="md-ellipsis">
     
   
-    Python
+    Python Libraries
   
 
     
@@ -2574,7 +2942,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Python
+    Python Libraries
   
 
           </label>
@@ -2587,14 +2955,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/PythonNB/numpy.ipynb" class="md-nav__link">
+      <a href="../../../courses/PythonLibs/numpy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    NumPy
   
 
     
@@ -2615,14 +2983,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/PythonNB/pandas.ipynb" class="md-nav__link">
+      <a href="../../../courses/PythonLibs/pandas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    Pandas
   
 
     
@@ -2643,14 +3011,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/PythonNB/matplotlib.ipynb" class="md-nav__link">
+      <a href="../../../courses/PythonLibs/scikit-learn/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    Scikit Learn
   
 
     
@@ -2671,14 +3039,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/PythonNB/scikit-learn.ipynb" class="md-nav__link">
+      <a href="../../../courses/PythonLibs/torch/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    PyTorch
   
 
     
@@ -2699,14 +3067,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/PythonNB/torch.ipynb" class="md-nav__link">
+      <a href="../../../courses/PythonLibs/hugging-face/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    Hugging Face
   
 
     
@@ -2727,14 +3095,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/PythonNB/hugging-face.ipynb" class="md-nav__link">
+      <a href="../../../courses/PythonLibs/matplotlib-seaborn-plotly/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    Matplotlib &amp; Seaborn &amp; Plotly
   
 
     
@@ -2841,6 +3209,8 @@
               </div>
             
             
+              
+                
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
@@ -3088,6 +3458,178 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hadoop-distributed-file-system-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hadoop Distributed File System (HDFS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hadoop Distributed File System (HDFS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 介绍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 HDFS 设计原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 HDFS 设计原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 HDFS 架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-file-system-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 文件系统命名空间 The File System Namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-data-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 数据复制 Data Replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 数据复制的实现原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 副本的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 架构的稳定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 HDFS 的特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附：图解HDFS存储原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附：图解HDFS存储原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. HDFS写数据原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hdfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. HDFS读数据原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hdfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. HDFS故障类型和其检测方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3105,6 +3647,8 @@
             <div class="md-content" data-md-component="content">
               
                 
+
+  
 
 
 
@@ -3182,6 +3726,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
   <nav class="md-tags">
     
@@ -3215,7 +3761,15 @@
 <h1 id="big-data">Big Data<a class="headerlink" href="#big-data" title="Permanent link">¶</a></h1>
 <p>Reference:</p>
 <ol>
-<li>Data Analysis with Python and PySpark,  ISBN: 9781617297205</li>
+<li>
+<p>Data Analysis with Python and PySpark,  ISBN: 9781617297205</p>
+</li>
+<li>
+<p>Hadoop: The Definitive Guide 4<sup>th</sup> Edition, ISBN: 9781491901632</p>
+</li>
+<li>
+<p><a href="https://github.com/heibaiying/BigData-Notes">https://github.com/heibaiying/BigData-Notes</a></p>
+</li>
 </ol>
 <h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">¶</a></h2>
 <ol>
@@ -3720,6 +4274,12 @@ SET hive.merge.smallfiles.avgsize = 128000000;
 <li>Tez config: <a href="https://tez.apache.org/releases/0.8.2/tez-api-javadocs/configs/TezConfiguration.html">https://tez.apache.org/releases/0.8.2/tez-api-javadocs/configs/TezConfiguration.html</a></li>
 </ul>
 </li>
+<li>
+<p>Materialized views</p>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/Materialized+views">https://cwiki.apache.org/confluence/display/Hive/Materialized+views</a></li>
+</ul>
+</li>
 </ol>
 <h2 id="hadoop">Hadoop<a class="headerlink" href="#hadoop" title="Permanent link">¶</a></h2>
 <h3 id="file-system-fs-cli">File System (FS) CLI<a class="headerlink" href="#file-system-fs-cli" title="Permanent link">¶</a></h3>
@@ -3755,6 +4315,93 @@ SET hive.merge.smallfiles.avgsize = 128000000;
 </ul>
 </li>
 </ol>
+<h3 id="hadoop-distributed-file-system-hdfs">Hadoop Distributed File System (HDFS)<a class="headerlink" href="#hadoop-distributed-file-system-hdfs" title="Permanent link">¶</a></h3>
+<h4 id="1">1 介绍<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
+<p>References:</p>
+<ol>
+<li><a href="https://github.com/heibaiying/BigData-Notes/blob/master/notes/Hadoop-HDFS.md">https://github.com/heibaiying/BigData-Notes/blob/master/notes/Hadoop-HDFS.md</a></li>
+<li><a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html">https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a></li>
+</ol>
+<p><strong>HDFS</strong> （<strong>Hadoop Distributed File System</strong>）是 Hadoop 下的分布式文件系统，具有高容错、高吞吐量等特性，可以部署在低成本的硬件上。</p>
+<h4 id="2-hdfs">2 HDFS 设计原理<a class="headerlink" href="#2-hdfs" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/images/hdfsarchitecture.png" data-desc-position="bottom"><img alt="HDFS Architecture" src="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/images/hdfsarchitecture.png"></a></p>
+<h5 id="21-hdfs">2.1 HDFS 架构<a class="headerlink" href="#21-hdfs" title="Permanent link">¶</a></h5>
+<p>HDFS 遵循主/从架构，由单个 NameNode(NN) 和多个 DataNode(DN) 组成：</p>
+<ul>
+<li><strong>NameNode</strong> : 负责执行有关 <code>文件系统命名空间</code> 的操作，例如打开，关闭、重命名文件和目录等。它同时还负责集群元数据的存储，记录着文件中各个数据块的位置信息。</li>
+<li><strong>DataNode</strong>：负责提供来自文件系统客户端的读写请求，执行块的创建，删除等操作。</li>
+</ul>
+<h5 id="22-the-file-system-namespace">2.2 文件系统命名空间 The File System Namespace<a class="headerlink" href="#22-the-file-system-namespace" title="Permanent link">¶</a></h5>
+<p>HDFS 的 <code>文件系统命名空间</code> 的层次结构与大多数文件系统类似 (如 Linux)， 支持目录和文件的创建、移动、删除和重命名等操作，支持配置用户和访问权限，但不支持硬链接和软连接。<code>NameNode</code> 负责维护文件系统名称空间，记录对名称空间或其属性的任何更改。</p>
+<h5 id="23-data-replication">2.3 数据复制 Data Replication<a class="headerlink" href="#23-data-replication" title="Permanent link">¶</a></h5>
+<p>由于 Hadoop 被设计运行在廉价的机器上，这意味着硬件是不可靠的，为了保证容错性，HDFS 提供了数据复制机制。HDFS 将每一个文件存储为一系列**块**，每个块由多个副本来保证容错，块的大小和复制因子可以自行配置（默认情况下，块大小是 128M，默认复制因子是 3）。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/images/hdfsdatanodes.png" data-desc-position="bottom"><img alt="Replication" src="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/images/hdfsdatanodes.png"></a></p>
+<h5 id="24">2.4 数据复制的实现原理<a class="headerlink" href="#24" title="Permanent link">¶</a></h5>
+<p>大型的 HDFS 实例在通常分布在多个机架的多台服务器上，不同机架上的两台服务器之间通过交换机进行通讯。在大多数情况下，同一机架中的服务器间的网络带宽大于不同机架中的服务器之间的带宽。因此 HDFS 采用机架感知副本放置策略，对于常见情况，当复制因子为 3 时，HDFS 的放置策略是：</p>
+<p>在写入程序位于 <code>datanode</code> 上时，就优先将写入文件的一个副本放置在该 <code>datanode</code> 上，否则放在随机 <code>datanode</code> 上。之后在另一个远程机架上的任意一个节点上放置另一个副本，并在该机架上的另一个节点上放置最后一个副本。此策略可以减少机架间的写入流量，从而提高写入性能。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-机架.png" data-desc-position="bottom"><img alt="rack" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-机架.png"></a></p>
+<p>如果复制因子大于 3，则随机确定第 4 个和之后副本的放置位置，同时保持每个机架的副本数量低于上限，上限值通常为 <code>（复制系数 - 1）/机架数量 + 2</code>，需要注意的是不允许同一个 <code>dataNode</code> 上具有同一个块的多个副本。</p>
+<h5 id="25">2.5  副本的选择<a class="headerlink" href="#25" title="Permanent link">¶</a></h5>
+<p>为了最大限度地减少带宽消耗和读取延迟，HDFS 在执行读取请求时，优先读取距离读取器最近的副本。如果在与读取器节点相同的机架上存在副本，则优先选择该副本。如果 HDFS 群集跨越多个数据中心，则优先选择本地数据中心上的副本。</p>
+<h5 id="26">2.6 架构的稳定性<a class="headerlink" href="#26" title="Permanent link">¶</a></h5>
+<ol>
+<li>
+<p>心跳机制和重新复制</p>
+<p>每个 DataNode 定期向 NameNode 发送心跳消息，如果超过指定时间没有收到心跳消息，则将 DataNode 标记为死亡。NameNode 不会将任何新的 IO 请求转发给标记为死亡的 DataNode，也不会再使用这些 DataNode 上的数据。 由于数据不再可用，可能会导致某些块的复制因子小于其指定值，NameNode 会跟踪这些块，并在必要的时候进行重新复制。</p>
+</li>
+<li>
+<p>数据的完整性</p>
+<p>由于存储设备故障等原因，存储在 DataNode 上的数据块也会发生损坏。为了避免读取到已经损坏的数据而导致错误，HDFS 提供了数据完整性校验机制来保证数据的完整性，具体操作如下：</p>
+<p>当客户端创建 HDFS 文件时，它会计算文件的每个块的 <code>校验和</code>，并将 <code>校验和</code> 存储在同一 HDFS 命名空间下的单独的隐藏文件中。当客户端检索文件内容时，它会验证从每个 DataNode 接收的数据是否与存储在关联校验和文件中的 <code>校验和</code> 匹配。如果匹配失败，则证明数据已经损坏，此时客户端会选择从其他 DataNode 获取该块的其他可用副本。</p>
+</li>
+<li>
+<p>元数据的磁盘故障</p>
+<p><code>FsImage</code> 和 <code>EditLog</code> 是 HDFS 的核心数据，这些数据的意外丢失可能会导致整个 HDFS 服务不可用。为了避免这个问题，可以配置 NameNode 使其支持 <code>FsImage</code> 和 <code>EditLog</code> 多副本同步，这样 <code>FsImage</code> 或 <code>EditLog</code> 的任何改变都会引起每个副本 <code>FsImage</code> 和 <code>EditLog</code> 的同步更新。</p>
+</li>
+<li>
+<p>支持快照</p>
+<p>快照支持在特定时刻存储数据副本，在数据意外损坏时，可以通过回滚操作恢复到健康的数据状态。</p>
+</li>
+</ol>
+<h4 id="3-hdfs">3 HDFS 的特点<a class="headerlink" href="#3-hdfs" title="Permanent link">¶</a></h4>
+<ol>
+<li>
+<p>高容错</p>
+<p>由于 HDFS 采用数据的多副本方案，所以部分硬件的损坏不会导致全部数据的丢失。</p>
+</li>
+<li>
+<p>高吞吐量</p>
+<p>HDFS 设计的重点是支持高吞吐量的数据访问，而不是低延迟的数据访问。</p>
+</li>
+<li>
+<p>大文件支持</p>
+<p>HDFS 适合于大文件的存储，文档的大小应该是是 GB 到 TB 级别的。</p>
+</li>
+<li>
+<p>简单一致性模型</p>
+<p>HDFS 更适合于一次写入多次读取 (write-once-read-many) 的访问模型。支持将内容追加到文件末尾，但不支持数据的随机访问，不能从文件任意位置新增数据。</p>
+</li>
+<li>
+<p>跨平台移植性</p>
+<p>HDFS 具有良好的跨平台移植性，这使得其他大数据计算框架都将其作为数据持久化存储的首选方案。</p>
+</li>
+</ol>
+<h4 id="hdfs">附：图解HDFS存储原理<a class="headerlink" href="#hdfs" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>说明：以下图片引用自博客：<a href="https://blog.csdn.net/hudiefenmu/article/details/37655491">翻译经典 HDFS 原理讲解漫画</a></p>
+</blockquote>
+<h5 id="1-hdfs">1. HDFS写数据原理<a class="headerlink" href="#1-hdfs" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-1.jpg" data-desc-position="bottom"><img alt="HDFS Write 1" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-1.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-2.jpg" data-desc-position="bottom"><img alt="HDFS Write 2" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-2.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-3.jpg" data-desc-position="bottom"><img alt="HDFS Write 3" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-3.jpg"></a></p>
+<h5 id="2-hdfs_1">2. HDFS读数据原理<a class="headerlink" href="#2-hdfs_1" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-read-1.jpg" data-desc-position="bottom"><img alt="HDFS Read" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-read-1.jpg"></a></p>
+<h5 id="3-hdfs_1">3. HDFS故障类型和其检测方法<a class="headerlink" href="#3-hdfs_1" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-1.jpg" data-desc-position="bottom"><img alt="HDFS Tolerance 1" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-1.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-2.jpg" data-desc-position="bottom"><img alt="HDFS Tolerance 2" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-2.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-3.jpg" data-desc-position="bottom"><img alt="HDFS Tolerance 3" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-3.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-4.jpg" data-desc-position="bottom"><img alt="HDFS Tolerance 4" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-4.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-5.jpg" data-desc-position="bottom"><img alt="HDFS Tolerance 5" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-5.jpg"></a></p>
 
 
 
@@ -3777,7 +4424,7 @@ SET hive.merge.smallfiles.avgsize = 128000000;
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 2, 2024 07:16:36 UTC">August 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 22, 2025 06:55:48 UTC">December 22, 2025</span>
   </span>
 
     
@@ -3796,6 +4443,8 @@ SET hive.merge.smallfiles.avgsize = 128000000;
   </aside>
 
 
+
+  
 
 
 
@@ -3859,6 +4508,8 @@ SET hive.merge.smallfiles.avgsize = 128000000;
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
@@ -3879,13 +4530,13 @@ SET hive.merge.smallfiles.avgsize = 128000000;
         
         
           
-          <a href="../../languages/C/" class="md-footer__link md-footer__link--next" aria-label="Next: Clang">
+          <a href="../NLP/" class="md-footer__link md-footer__link--next" aria-label="Next: NLP">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Clang
+                NLP
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -129,15 +129,47 @@
          <lastmod>2025-12-22</lastmod>
     </url>
     <url>
-         <loc>https://linkch0.github.io/courses/InternLM/assignment/</loc>
+         <loc>https://linkch0.github.io/courses/LLM/CS336/introduction/</loc>
          <lastmod>2025-12-22</lastmod>
     </url>
     <url>
-         <loc>https://linkch0.github.io/courses/InternLM/lecture/</loc>
+         <loc>https://linkch0.github.io/courses/LLM/CS336/lecture/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/LLM/InternLM/assignment/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/LLM/InternLM/lecture/</loc>
          <lastmod>2025-12-22</lastmod>
     </url>
     <url>
          <loc>https://linkch0.github.io/courses/OS_JYY/introduction/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/PythonLibs/hugging-face/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/PythonLibs/matplotlib-seaborn-plotly/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/PythonLibs/numpy/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/PythonLibs/pandas/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/PythonLibs/scikit-learn/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/courses/PythonLibs/torch/</loc>
          <lastmod>2025-12-22</lastmod>
     </url>
     <url>
@@ -162,6 +194,10 @@
     </url>
     <url>
          <loc>https://linkch0.github.io/notes/techniques/BigData/</loc>
+         <lastmod>2025-12-22</lastmod>
+    </url>
+    <url>
+         <loc>https://linkch0.github.io/notes/techniques/NLP/</loc>
          <lastmod>2025-12-22</lastmod>
     </url>
     <url>
