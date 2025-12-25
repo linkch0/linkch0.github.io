@@ -11,7 +11,7 @@ icon: material/face-man
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-chalkboard-teacher:: **助教**
+-   :fontawesome-solid-chalkboard-teacher: **助教**
 
     ***
 
@@ -73,8 +73,8 @@ icon: material/face-man
 
 由 [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) 提供
 
-![统计数据](https://github-readme-stats.vercel.app/api?username=linkch0&locale=cn&theme=transparent&show_icons=true)
-![常用语言](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&locale=cn&theme=transparent&layout=compact&langs_count=8)
+![统计数据](https://github-readme-stats-peach-zeta-58.vercel.app/api?username=linkch0&locale=cn&theme=transparent&show_icons=true)
+![常用语言](https://github-readme-stats-peach-zeta-58.vercel.app/api/top-langs/?username=linkch0&locale=cn&theme=transparent&layout=compact&langs_count=8)
 
 
 ## 页面访问量

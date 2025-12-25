@@ -27,7 +27,9 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: |
-          pip install mkdocs-material \
+          sudo apt update
+          sudo apt install -y pngquant
+          pip install "mkdocs-material[imaging]" \
           mkdocs-git-revision-date-localized-plugin \
           mkdocs-git-committers-plugin-2 \
           mkdocs-glightbox \

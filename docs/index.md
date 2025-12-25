@@ -11,7 +11,7 @@ Hi there :wave:, this is Link Chen :man_technologist:.
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-chalkboard-teacher:: **Teaching Assistant**
+-   :fontawesome-solid-chalkboard-teacher: **Teaching Assistant**
 
     ***
 
@@ -73,8 +73,8 @@ Hi there :wave:, this is Link Chen :man_technologist:.
 
 Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linkch0&theme=transparent&show_icons=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linkch0&theme=transparent&layout=compact&langs_count=8)
+![GitHub Stats](https://github-readme-stats-peach-zeta-58.vercel.app/api?username=linkch0&theme=transparent&show_icons=true)
+![Top Langs](https://github-readme-stats-peach-zeta-58.vercel.app/api/top-langs/?username=linkch0&theme=transparent&layout=compact&langs_count=8)
 
 ## Pageviews
 

@@ -48,24 +48,28 @@ plugins:
       blog_toc: true
   - search
   - tags
-  - git-revision-date-localized:
-      # CI: true is default in GitHub Actions
-      enabled: !ENV [CI, false]
-      enable_creation_date: true
-  - git-committers:
-      enabled: !ENV [CI, false]
-      repository: linkch0/linkch0.github.io
-      branch: main
   - glightbox
   - mkdocs-jupyter
+  - group:
+      # CI: true is default in GitHub Actions
+      enabled: !ENV [CI, false]
+      plugins:
+        - optimize
+        - social
+        - git-revision-date-localized:
+            enable_creation_date: true
+        - git-committers:
+            repository: linkch0/linkch0.github.io
+            branch: main
+            token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
 extra:
   social:
     - icon: fontawesome/solid/envelope
-      link: mailto:link@connect.hku.hk
+      link: mailto:linkch@qq.com
       name: Email
     - icon: fontawesome/brands/github
-      link: https://github.com/herolink
+      link: https://github.com/linkch0
       name: GitHub
     - icon: fontawesome/brands/bilibili
       link: https://space.bilibili.com/33514662
