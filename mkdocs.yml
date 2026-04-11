@@ -126,6 +126,7 @@ nav:
           - notes/utilities/Vim.md
           - notes/utilities/Command-Lines.md
           - notes/utilities/Softwares.md
+          - notes/utilities/Math.md
       - Techniques:
           - notes/techniques/BigData.md
           - notes/techniques/NLP.md

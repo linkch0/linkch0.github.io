@@ -15,7 +15,7 @@ icon: material/face-man
 
     ***
 
-    [![香港大学计算与数据科学学院上海校区](assets/images/HKU-CDS-Logo.svg)](https://www.cds.hku.hk/)
+    [![香港大学计算与数据科学学院上海校区](assets/images/HKU-CDS-Logo.png)](https://www.cds.hku.hk/)
 
     **香港大学计算与数据科学学院上海校区**
 

@@ -15,7 +15,7 @@ Hi there :wave:, this is Link Chen :man_technologist:.
 
     ***
 
-    [![HKU CDS](assets/images/HKU-CDS-Logo.svg)](https://www.cds.hku.hk/)
+    [![HKU CDS](assets/images/HKU-CDS-Logo.png)](https://www.cds.hku.hk/)
 
     **HKU-CDS Teaching and Research Site in Shanghai**
 
