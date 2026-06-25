@@ -8,7 +8,7 @@ comments: true
 
 ## 01 Overview
 
-1. **Sign-Magnitude:**
+1. **Sign-Magnitude: 原码**
 
    - **Positive Numbers:** The most significant bit (MSB) is the sign bit (0 for positive).
    - **Negative Numbers:** The sign bit is 1, and the remaining bits represent the magnitude of the negative number.
@@ -18,7 +18,7 @@ comments: true
    - `+6` is represented as `0 0110` (sign bit 0, magnitude 6).
    - `-6` is represented as `1 0110` (sign bit 1, magnitude 6).
 
-2. **One's Complement:**
+2. **One's Complement: 反码**
 
    - **Positive Numbers:** Same as unsigned binary representation.
    - **Negative Numbers:** To represent a negative number, invert (flip) all the bits.
@@ -28,7 +28,7 @@ comments: true
    - `+6` is represented as `0 0110`.
    - `-6` is represented as `1 1001` (inverting all bits of `0 0110`).
 
-3. **Two's Complement:**
+3. **Two's Complement: 补码**
 
    - **Positive Numbers:** Same as unsigned binary representation.
    - **Negative Numbers:** To represent a negative number, invert all bits and add 1.

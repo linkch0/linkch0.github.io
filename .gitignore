@@ -1,3 +1,9 @@
 site
 .cache
 docs/courses/*/resources
+
+# UV
+.venv
+.python-version
+pyproject.toml
+uv.lock

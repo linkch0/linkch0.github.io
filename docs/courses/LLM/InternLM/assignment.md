@@ -9,7 +9,7 @@ hide:
 
 ## L2 轻松玩转书生·浦语大模型趣味 Demo
 
-[笔记地址](./lecture.md/#l2-demo)
+[笔记地址](./lecture.md#l2-demo){ data-preview }
 
 ### 环境配置
 
@@ -933,8 +933,8 @@ log_processor = dict(by_epoch=False)
 
 ## L5 LMDeploy 大模型量化部署实践
 
-[笔记地址](./lecture.md/#l5-lmdeploy)
+[笔记地址](./lecture.md#l5-lmdeploy){ data-preview }
 
 ## L6 OpenCompass 大模型评测解读及实战指南
 
-[笔记地址](./lecture.md/#l6-opencompass)
+[笔记地址](./lecture.md#l6-opencompass){ data-preview }
