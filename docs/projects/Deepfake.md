@@ -59,7 +59,7 @@ $$
 
 ### Generative Framework
 
-See [AIGC](../notes/techniques/AIGC.md) for more details.
+See [AIGC](../notes/Techniques/AIGC.md) for more details.
 
 ## Datasets
 
