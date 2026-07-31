@@ -14,27 +14,38 @@ nav = [
     "index.md",
     "index.zh.md",
     { Utilities = [
-      "notes/utilities/Vim.md",
-      "notes/utilities/Command-Lines.md",
-      "notes/utilities/Softwares.md",
-      "notes/utilities/Math.md",
+      "notes/Utilities/Vim.md",
+      "notes/Utilities/Command-Lines.md",
+      "notes/Utilities/Softwares.md",
+      "notes/Utilities/Math.md",
     ] },
     { Techniques = [
-      "notes/techniques/BigData.md",
-      "notes/techniques/NLP.md",
+      "notes/Techniques/AIGC.md",
+      "notes/Techniques/BigData.md",
+      "notes/Techniques/CV.md",
+      "notes/Techniques/NLP.md",
     ] },
-    { Languages = [
-      "notes/languages/C.md",
-      "notes/languages/Java.md",
-      "notes/languages/Python.md",
-      "notes/languages/Vocabulary.md",
+    { "Programming Languages" = [
+      "notes/Programming-Languages/C.md",
+      "notes/Programming-Languages/Java.md",
+      "notes/Programming-Languages/Python.md",
+      # { "Python Libraries" = [
+      #   "notes/Programming-Languages/Python-Libs/numpy.ipynb",
+      #   "notes/Programming-Languages/Python-Libs/pandas.ipynb",
+      #   "notes/Programming-Languages/Python-Libs/scikit-learn.ipynb",
+      #   "notes/Programming-Languages/Python-Libs/torch.ipynb",
+      #   "notes/Programming-Languages/Python-Libs/hugging-face.ipynb",
+      #   "notes/Programming-Languages/Python-Libs/matplotlib-seaborn-plotly.ipynb",
+      # ] },
     ] },
     { Skills = [
-      "notes/skills/Cooking.md",
-      "notes/skills/Photography.md",
+      "notes/Skills/English.md",
+      "notes/Skills/Cantonese.md",
+      "notes/Skills/Cooking.md",
+      "notes/Skills/Photography.md",
     ] },
     "notes/Misc.md",
-    { License = "https://squidfunk.github.io/mkdocs-material/license/" },
+    { License = "https://zensical.org/docs/license/" },
   ] },
   { Blog = [
     "blog/index.md",
@@ -94,17 +105,10 @@ nav = [
     { "Operating Systems" = [
       "courses/OS_JYY/introduction.md",
     ] },
-    { "Python Libraries" = [
-      "courses/PythonLibs/numpy.ipynb",
-      "courses/PythonLibs/pandas.ipynb",
-      "courses/PythonLibs/scikit-learn.ipynb",
-      "courses/PythonLibs/torch.ipynb",
-      "courses/PythonLibs/hugging-face.ipynb",
-      "courses/PythonLibs/matplotlib-seaborn-plotly.ipynb",
-    ] },
   ] },
   { Projects = [
     "projects/index.md",
+    "projects/Deepfake.md",
   ] },
 ]
 

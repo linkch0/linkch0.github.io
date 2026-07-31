@@ -4,7 +4,7 @@ tags: [Updating]
 comments: true
 ---
 
-# Cooking 烹饪
+# Cooking
 
 记录一下做过的菜
 
