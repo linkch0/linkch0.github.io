@@ -8,11 +8,9 @@ comments: true
 
 ## Autoencoder
 
-Ref: <https://lilianweng.github.io/posts/2018-08-12-vae/>
-
-Video: <https://www.youtube.com/watch?v=hZ4a4NgM3u0>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hZ4a4NgM3u0?si=HBp7dxa9p9SrFV--" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Ref: <https://lilianweng.github.io/posts/2018-08-12-vae/>
 
 Autoencoder
 
@@ -39,6 +37,10 @@ Autoencoder
 - Learning robust latent representation
 
 ### Variational Autoencoder (VAE)
+
+Recap Bayes' theorem
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/akClB1J6b28?si=3xaV78cvQUbTxpqe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Vector Quantized Variational Autoencoder (VQ-VAE)
 
