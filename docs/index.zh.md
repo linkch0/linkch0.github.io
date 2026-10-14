@@ -15,12 +15,13 @@ icon: material/face-man
 
     ***
 
-    [![香港大学计算与数据科学学院上海校区](assets/images/HKU-CDS-Logo.png)](https://www.cds.hku.hk/)
+    [![香港大学计算与数据科学学院](assets/images/HKU-CDS-Logo.png)](https://www.cds.hku.hk/)
 
-    **香港大学计算与数据科学学院上海校区**
+    **上海市港大教育中心**
 
-    - 中国上海浦东张江
+    - 中国上海浦东
     - 2026.01 - 至今
+    - HKU-CDS 上海教研基地
 
 -   :fontawesome-solid-code: **研发工程师**
 
@@ -41,31 +42,31 @@ icon: material/face-man
 
 <div class="grid cards" markdown>
 
+-   :fontawesome-solid-graduation-cap: **哲学博士**
+
+    ***
+
+    [![香港大学](assets/images/HKU-Logo.svg)](https://hku.hk/)
+
+    **香港大学**
+
+    -   中国上海浦东
+    -   2026.10 - 至今
+    -   [计算与数据科学 哲学博士](https://www.cs.hku.hk/programmes/research-based)
+    -   导师 [Prof. Siu Ming Yiu](https://www.cs.hku.hk/index.php/people/academic-staff/smyiu)
+
 -   :fontawesome-solid-graduation-cap: **理学硕士**
 
     ***
 
-    [![香港大学](https://hku.hk/assets/img/hku-logo.svg)](https://hku.hk/)
+    [![香港大学](assets/images/HKU-Logo.svg)](https://hku.hk/)
 
     **香港大学**
 
     -   中国香港薄扶林
     -   2022.09 - 2023.11
-    -   [计算机科学，理学硕士](https://www.msc-cs.hku.hk/)
-    -   导师 [Hengshuang Zhao](https://hszhao.github.io/)
-
--   :fontawesome-solid-graduation-cap: **工学学士**
-
-    ***
-
-    [![苏州科技大学](https://www.usts.edu.cn/dfiles/11467/static/images/logo.jpg)](https://www.usts.edu.cn/)
-
-    **苏州科技大学**
-
-    -   中国江苏省苏州市
-    -   2018.09 - 2022.06
-    -   [计算机科学与技术，工学学士](https://eie.usts.edu.cn/info/1114/3192.htm)
-    -   导师 [陆卫忠](https://eie.usts.edu.cn/info/1120/2956.htm)
+    -   [计算机科学 理学硕士](https://master.cds.hku.hk/msccs/)
+    -   导师 [Prof. Hengshuang Zhao](https://hszhao.github.io/)
 
 </div>
 
@@ -79,7 +80,6 @@ icon: material/face-man
 
 ## 页面访问量
 
-由 [ClustrMaps](https://clustrmaps.com/) 提供
+由 [Map My Visitors](https://mapmyvisitors.com/) 提供
 
-<script type='text/javascript' id='clustrmaps'
-    src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=fzKj6VBDwDj4ATO0h693A5cUOCbzT_bP2zN-Ew7YEN4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=500&t=tt&d=TzP9NBu8goEFktM5uZ3Q97eyRJQuIu-KSD8aroHYoGI'></script>

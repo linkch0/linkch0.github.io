@@ -17,10 +17,11 @@ Hi there :wave:, this is Link Chen :man_technologist:.
 
     [![HKU CDS](assets/images/HKU-CDS-Logo.png)](https://www.cds.hku.hk/)
 
-    **HKU-CDS Teaching and Research Site in Shanghai**
+    **Shanghai HKU Education Centre**
 
-    - Zhangjiang, Pudong, Shanghai, China
+    - Pudong, Shanghai, China
     - 2026.01 - Present
+    - HKU-CDS Teaching and Research Site in Shanghai
 
 -   :fontawesome-solid-code: **R&D Engineer**
 
@@ -41,31 +42,31 @@ Hi there :wave:, this is Link Chen :man_technologist:.
 
 <div class="grid cards" markdown>
 
+-   :fontawesome-solid-graduation-cap: **Doctor of Philosophy (PhD)**
+
+    ***
+
+    [![The University of Hong Kong](assets/images/HKU-Logo.svg)](https://hku.hk/)
+
+    **The University of Hong Kong**
+
+    -   Pudong, Shanghai, China
+    -   2026.10 - Present
+    -   [PhD in Computing and Data Science](https://www.cs.hku.hk/programmes/research-based)
+    -   Supervised by [Prof. Siu Ming Yiu](https://www.cs.hku.hk/index.php/people/academic-staff/smyiu)
+
 -   :fontawesome-solid-graduation-cap: **Master of Science (MSc)**
 
     ***
 
-    [![The University of Hong Kong](https://hku.hk/assets/img/hku-logo.svg)](https://hku.hk/)
+    [![The University of Hong Kong](assets/images/HKU-Logo.svg)](https://hku.hk/)
 
     **The University of Hong Kong**
 
     -   Pokfulam, Hong Kong, China
     -   2022.09 - 2023.11
-    -   [MSc in Computer Science](https://www.msc-cs.hku.hk/)
-    -   Supervised by [Hengshuang Zhao](https://hszhao.github.io/)
-
--   :fontawesome-solid-graduation-cap: **Bachelor of Engineering (BEng)**
-
-    ***
-
-    [![Suzhou University of Science and Technology](https://www.usts.edu.cn/dfiles/11467/static/images/logo.jpg)](https://www.usts.edu.cn/)
-
-    **Suzhou University of Science and Technology**
-
-    -   Suzhou, Jiangsu, China
-    -   2018.09 - 2022.06
-    -   [BEng in Computer Science and Technology](https://eie.usts.edu.cn/info/1114/3192.htm)
-    -   Supervised By [Weizhong Lu](https://eie.usts.edu.cn/info/1120/2956.htm)
+    -   [MSc in Computer Science](https://master.cds.hku.hk/msccs/)
+    -   Supervised by [Prof. Hengshuang Zhao](https://hszhao.github.io/)
 
 </div>
 
@@ -78,7 +79,6 @@ Provided by [github-readme-stats](https://github.com/anuraghazra/github-readme-s
 
 ## Pageviews
 
-Provided by [ClustrMaps](https://clustrmaps.com/)
+Provided by [Map My Visitors](https://mapmyvisitors.com/)
 
-<script type='text/javascript' id='clustrmaps'
-    src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=fzKj6VBDwDj4ATO0h693A5cUOCbzT_bP2zN-Ew7YEN4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=500&t=tt&d=TzP9NBu8goEFktM5uZ3Q97eyRJQuIu-KSD8aroHYoGI'></script>
