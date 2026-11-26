@@ -42,7 +42,7 @@ Hi there :wave:, this is Link Chen :man_technologist:.
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-graduation-cap: **Doctor of Philosophy (PhD)**
+<!-- -   :fontawesome-solid-graduation-cap: **Doctor of Philosophy (PhD)**
 
     ***
 
@@ -53,7 +53,7 @@ Hi there :wave:, this is Link Chen :man_technologist:.
     -   Pudong, Shanghai, China
     -   2026.10 - Present
     -   [PhD in Computing and Data Science](https://www.cs.hku.hk/programmes/research-based)
-    -   Supervised by [Prof. Siu Ming Yiu](https://www.cs.hku.hk/index.php/people/academic-staff/smyiu)
+    -   Supervised by [Prof. Siu Ming Yiu](https://www.cs.hku.hk/index.php/people/academic-staff/smyiu) -->
 
 -   :fontawesome-solid-graduation-cap: **Master of Science (MSc)**
 

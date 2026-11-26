@@ -84,6 +84,10 @@ nav = [
   ] },
   { Courses = [
     "courses/index.md",
+    { Artificial-Intelligence = [
+      "courses/Artificial-Intelligence/CS188.md",
+      # "courses/Artificial-Intelligence/lecture.md",
+    ] },
     { LLM = [
       { CS336 = [
         "courses/LLM/CS336/introduction.md",

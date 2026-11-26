@@ -42,7 +42,7 @@ icon: material/face-man
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-graduation-cap: **哲学博士**
+<!-- -   :fontawesome-solid-graduation-cap: **哲学博士**
 
     ***
 
@@ -53,7 +53,7 @@ icon: material/face-man
     -   中国上海浦东
     -   2026.10 - 至今
     -   [计算与数据科学 哲学博士](https://www.cs.hku.hk/programmes/research-based)
-    -   导师 [Prof. Siu Ming Yiu](https://www.cs.hku.hk/index.php/people/academic-staff/smyiu)
+    -   导师 [Prof. Siu Ming Yiu](https://www.cs.hku.hk/index.php/people/academic-staff/smyiu) -->
 
 -   :fontawesome-solid-graduation-cap: **理学硕士**
 
